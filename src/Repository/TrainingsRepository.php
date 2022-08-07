@@ -39,6 +39,28 @@ class TrainingsRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+    * @return Coaches[] Returns an array of Coaches objects
+    */
+    public function lasttrainings(): array
+    {
+        return $this->createQueryBuilder('t')          
+            ->orderBy('t.id', 'DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function isForward() {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.forward = 1')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return Trainings[] Returns an array of Trainings objects
 //     */

@@ -82,6 +82,12 @@ class Coaches
         $this->favorites = new ArrayCollection();              
     }
 
+    public function __toString()
+    {
+        $this->getName();
+        return $this->name;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

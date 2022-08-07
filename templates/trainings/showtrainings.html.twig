@@ -1,0 +1,29 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Formations{% endblock %}
+
+{% block body %}
+{# {{ render(path('search_coaches')) }} #}
+<div class="album py-5 ">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for training in trainings %}
+                <div class="col">                    
+                    <div class="card shadow-sm"> 
+                        {% for image in training.images %}
+                            <div>
+                                <a href={{path('show_training', {id:training.id})}}><img class="card-img-bottom" src="{{ asset('/uploads/'~image.image) }}" alt="training image" width="200px" height="400px" ></a>
+                            </div>
+                        {% endfor %}                   
+                    </div>
+                </div>
+            {% endfor %}            
+        </div>
+        <br>
+        <div class"d-flex justify-content-center">      
+            {{ knp_pagination_render(trainings, 'home/_pagination.html.twig') }}
+        </div>
+    </div>    
+</div>
+{% endblock %}
