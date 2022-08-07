@@ -39,6 +39,20 @@ class CoachesRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+    * @return Coaches[] Returns an array of Coaches objects
+    */
+    public function lastCoaches(): array
+    {
+        return $this->createQueryBuilder('c')          
+            ->orderBy('c.id', 'DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+
 //    /**
 //     * @return Coaches[] Returns an array of Coaches objects
 //     */
@@ -63,4 +77,33 @@ class CoachesRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+    public function findCoach($name = null, $training = null)
+    {
+        //liaisons des tables
+        $queryBuilder = $this->createQueryBuilder('c');        
+
+        //si le champ nom est rempli
+        if($name){
+            $queryBuilder
+            ->andWhere('c.name LIKE :nameCoach')
+            ->setParameter('nameCoach', '%'.$name.'%');
+        }
+
+        //si le champ formation est rempli
+        if($training){
+            $queryBuilder
+            ->join('c.trainings', 't')
+            ->andWhere('t.name LIKE :nametrainings')
+            ->setParameter('nametrainings', '%'.$training.'%');
+        }   
+
+        return $queryBuilder
+        ->orderBy('c.name')
+        ->getQuery()        
+        ->getResult()
+        ;
+    }  
+
+
 }

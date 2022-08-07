@@ -3,6 +3,9 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-  {% include 'home/_banner.html.twig' %}
-  {% include 'home/_trainings.html.twig' %} 
+  {% include 'home/_banner.html.twig' %}  
+  {{ render(path('search_coaches')) }}
+  {{ render(path('last_trainings')) }}  
+  {{ render(path('forward_training')) }} 
+  <br>
 {% endblock %}

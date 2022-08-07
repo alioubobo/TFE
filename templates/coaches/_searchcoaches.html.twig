@@ -1,0 +1,29 @@
+{% block body %}
+<div class="container">
+    <h2>Quelle formation cherchez-vous?</h2> 
+    <form class="d-flex" action={{path('filter_search')}} method="Post">        
+            <div class="form-group ">
+                <label for="name">Coach</label>
+                <input list="name" type="text"  name="nameCoach" class="form-control" placeholder="Coach"/>
+                <datalist id="name">                
+                     {% for coach in coaches %}                    
+                        <option value={{coach.name}}>
+                    {% endfor %}      
+                </datalist>
+            </div>
+            <div class="form-group ">
+                <label for="name">Formation</label>
+                <input list="trainings" type="text" name="nametrainings" class="form-control"  placeholder="Formation" />
+                  <datalist id="trainings">              
+                    {% for training in trainings %}                    
+                        <option value={{training.name}}>
+                    {% endfor %}                 
+                </datalist>
+            </div>                     
+            <div class="form-group "> 
+                <br>  
+                <button class="btn btn-primary " type="submit">Rechercher</button>
+            </div>
+    </form>    
+</div> 
+{% endblock %}
