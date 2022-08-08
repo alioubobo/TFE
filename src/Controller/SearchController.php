@@ -9,6 +9,7 @@ use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class SearchController extends AbstractController
@@ -33,7 +34,9 @@ class SearchController extends AbstractController
      */
 
      //Permet de filtrer les données encoder dans le formulaire
-     public function filterSearch(Request $request, EntityManagerInterface $em, PaginatorInterface $paginator): Response
+     public function filterSearch(Request $request, EntityManagerInterface $em, 
+     PaginatorInterface $paginator,
+     TranslatorInterface $translator): Response
     {
          //Récupération des données via le name du formulaire
          $name = $request->request->get('nameCoach');
@@ -43,7 +46,8 @@ class SearchController extends AbstractController
         
          //permet de vérifier si la variable est vide pour afficher un message 
         if(empty($coaches)){
-            $this->addFlash("pasdecoach", "Aucun résultat pour cet élément!");
+            $message = $translator->trans('No results for this item!');
+            $this->addFlash("pasdecoach", $message);
         }
         
         //la pagignation

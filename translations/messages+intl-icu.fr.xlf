@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="QkTPxyf" resname="No results for this item!">
+        <source>No results for this item!</source>
+        <target>Aucun resultat pour cet élément!</target>
+      </trans-unit>
+      <trans-unit id="vrjJnvi" resname="What training are you looking for?">
+        <source>What training are you looking for?</source>
+        <target>Quelle formation cherchez-vous?</target>
+      </trans-unit>
+      <trans-unit id="wvt4jH3" resname="training">
+        <source>training</source>
+        <target>Formation</target>
+      </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>Recherche</target>
+      </trans-unit>
+      <trans-unit id="yKeA0.P" resname="Log in!">
+        <source>Log in!</source>
+        <target>S'identifier</target>
+      </trans-unit>
+      <trans-unit id="acVpEs4" resname="You are logged in as">
+        <source>You are logged in as</source>
+        <target>Vous êtes connecté en tant que</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Deconnexion</target>
+      </trans-unit>
+      <trans-unit id="YdaVBBA" resname="Connexion">
+        <source>Connexion</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="eH0asuw" resname="The most important training is">
+        <source>The most important training is</source>
+        <target>La formation la plus importante est</target>
+      </trans-unit>
+      <trans-unit id="g05yOLZ" resname="Recent training courses">
+        <source>Recent training courses</source>
+        <target>Les formations récentes</target>
+      </trans-unit>
+      <trans-unit id="FZSDf88" resname="photo of the course">
+        <source>photo of the course</source>
+        <target>photo du cours</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Acceuil</target>
+      </trans-unit>
+      <trans-unit id="u9AyI1c" resname="Coachs">
+        <source>Coachs</source>
+        <target>Coachs</target>
+      </trans-unit>
+      <trans-unit id="_8e_aDo" resname="Formations">
+        <source>Formations</source>
+        <target>Trainings</target>
+      </trans-unit>
+      <trans-unit id="ZyFT62v" resname="A propos">
+        <source>A propos</source>
+        <target>About us</target>
+      </trans-unit>
+      <trans-unit id="K1w9JnI" resname="Contact">
+        <source>Contact</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="z7GsDIB" resname="Inscription">
+        <source>Inscription</source>
+        <target>Registration</target>
+      </trans-unit>
+      <trans-unit id="XohImNo" resname="password">
+        <source>password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="CT59X9u" resname="contact">
+        <source>contact</source>
+        <target>contact</target>
+      </trans-unit>
+      <trans-unit id="ZyVtvkV" resname="social networks">
+        <source>social networks</source>
+        <target>réseaux sociaux</target>
+      </trans-unit>
+      <trans-unit id="fAF5V4L" resname="Opening hours">
+        <source>Opening hours</source>
+        <target>Heures d'ouverture</target>
+      </trans-unit>
+      <trans-unit id="5ICXLVu" resname="Monday - Thursday 10am-12pm, 1pm-5pm">
+        <source>Monday - Thursday 10am-12pm, 1pm-5pm</source>
+        <target>Lundi - jeudi 10h00-12h00, 13h00-17h00</target>
+      </trans-unit>
+      <trans-unit id="Wvjxoy0" resname="Friday 9am-12pm">
+        <source>Friday 9am-12pm</source>
+        <target>Vendredi 9h00-12h00</target>
+      </trans-unit>
+      <trans-unit id="I.3_MY3" resname="Saturday - Sunday Closed">
+        <source>Saturday - Sunday Closed</source>
+        <target>Samedi - Dimanche fermé</target>
+      </trans-unit>
+      <trans-unit id="k0XgJ2N" resname="ARS 2022 all rights reserved">
+        <source>ARS 2022 all rights reserved</source>
+        <target>ARS 2022 tous droits réservés</target>
+      </trans-unit>
+      <trans-unit id="a3wPsQa" resname="Trainings">
+        <source>Trainings</source>
+        <target>Formations</target>
+      </trans-unit>
+      <trans-unit id="tLWAqa2" resname="About us">
+        <source>About us</source>
+        <target>A propos</target>
+      </trans-unit>
+      <trans-unit id="x5Pg2aH" resname="Registration">
+        <source>Registration</source>
+        <target>Inscription</target>
+      </trans-unit>
+      <trans-unit id="NqeY4.O" resname="Training">
+        <source>Training</source>
+        <target>Formation</target>
+      </trans-unit>
+      <trans-unit id="uT6sSVp" resname="Coaches">
+        <source>Coaches</source>
+        <target>Coachs</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
