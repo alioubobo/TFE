@@ -8,30 +8,31 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link text-white active" aria-current="page" href={{path('app_home')}}>Accueil</a>
+            <a class="nav-link text-white active" aria-current="page" href={{path('app_home')}}>{% trans %}Home{% endtrans %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href={{path('filter_search')}}>Coachs</a>
+            <a class="nav-link text-white" href={{path('filter_search')}}>{% trans %}Coaches{% endtrans %}</a>
           </li>       
           <li class="nav-item">
-            <a class="nav-link text-white" href={{path('show_trainings')}}>Formations</a>
+            <a class="nav-link text-white" href={{path('show_trainings')}}>{% trans %}Trainings{% endtrans %}</a>
           </li> 
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">A propos</a>
+            <a class="nav-link text-white" href="#">{% trans %}About us{% endtrans %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Contact</a>
-          </li>    
+            <a class="nav-link text-white" href="#">{% trans %}Contact{% endtrans %}</a>
+          </li>  
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">FR</a>
-          </li> 
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">EN</a>
+            {% for locale in locales %}
+                {% if locale != app.request.locale %}
+                    <a class="nav-link text-white" href="{{ path('change_locale', {'locale': locale}) }}"><img src="{{ asset('/uploads/images/'~locale~'.png') }}" alt"{{ locale }}" width="50px" height="30px"> </a>
+                {% endif %}
+            {% endfor %}            
           </li>    
         </ul>
         <div class="col-md-3 text-end">
-          <button type="button" class="btn btn-outline-primary me-2"><a class="nav-link" href={{path('app_login')}}>Connexion</a></button>
-          <button type="button" class="btn btn-primary">Inscription</button>
+          <button type="button" class="btn btn-outline-primary me-2"><a class="nav-link" href={{path('app_login')}}>{% trans %}Connexion{% endtrans %}</a></button>
+          <button type="button" class="btn btn-primary">{% trans %}Registration{% endtrans %}</button>
         </div>
       </div>
     </div>

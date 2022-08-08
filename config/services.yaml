@@ -7,6 +7,8 @@ parameters:
   logo_directory: "%kernel.project_dir%/public/uploads/logo"
   coaches_directory: "%kernel.project_dir%/public/uploads/coaches"
   images_directory: "%kernel.project_dir%/public/uploads/images"
+  # les langues disponbles
+  app.locales: [en, fr]
 services:
   # default configuration for services in *this* file
   _defaults:
