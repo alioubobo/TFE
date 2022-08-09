@@ -133,6 +133,20 @@
         <source>Coaches</source>
         <target>Coachs</target>
       </trans-unit>
+      <trans-unit id="e47zHas" resname="About ARS">
+        <source>About ARS</source>
+        <target>A propos d'ARS</target>
+      </trans-unit>
+      <trans-unit id="QrwnzaB" resname="ARS (Aller à la Rencontre de Soi) is a structure that was created by people who have been hardened by life's trials. Their aim is to put their experience at the service of others with attentive listening without judgement and with the greatest possible empathy through coaching sessions. In order to bring everyone to meet themselves and to be in agreement with themselves.">
+        <source>ARS (Aller à la Rencontre de Soi) is a structure that was created by people who have been hardened by life's trials. Their aim is to put their experience at the service of others with attentive listening without judgement and with the greatest possible empathy through coaching sessions. In order to bring everyone to meet themselves and to be in agreement with themselves.</source>
+        <target>Le cabinet « ARS » (Aller à la Rencontre de Soi) est une structure qui a été créée 
+                par des personnes aguerries par les épreuves de la vie. Elles ont pour but de mettre 
+                au service des uns et des autres leurs expériences avec une écoute attentive sans 
+                jugement et dans la plus grande empathie possible à travers des séances de 
+                coaching. Afin d’amener tout un chacun à aller à la rencontre de soi et d’être en 
+                accord avec soi-même.
+        </target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
