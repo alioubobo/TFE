@@ -16,7 +16,7 @@
             {% for coache in coaches %}
                 <div class="col">
                     <div class="card shadow-sm">
-                        <a href={{path('show_coach', {id:coache.id})}}><img class="card-img-bottom" src="{{ asset('/uploads/logos/'~coache.image) }}" alt="photo du coach" width="300px" height="300px"></a>
+                        {#<a href={{path('show_coach', {id:coache.id})}}><img class="card-img-bottom" src="{{ asset('/uploads/logos/'~coache.image) }}" alt="photo du coach" width="300px" height="300px"></a>#}
                     </div>
                     {# {% if app.user %} #}
                     <div class="btn-group">
