@@ -4,9 +4,9 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
-  logo_directory: "%kernel.project_dir%/public/uploads/logo"
-  coaches_directory: "%kernel.project_dir%/public/uploads/coaches"
-  images_directory: "%kernel.project_dir%/public/uploads/images"
+  app.logo_directory: "%kernel.project_dir%/public/uploads/logo"
+  app.coaches_directory: "%kernel.project_dir%/public/uploads/coaches"
+  app.images_directory: "%kernel.project_dir%/public/uploads/images"
   # les langues disponbles
   app.locales: [en, fr]
 services:

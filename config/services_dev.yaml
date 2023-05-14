@@ -1,0 +1,3 @@
+parameters:
+  app.mail_from_name: "ARS"
+  app.mail_from_address: "contact@ars.com"
