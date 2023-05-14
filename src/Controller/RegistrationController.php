@@ -44,7 +44,7 @@ class RegistrationController extends AbstractController
             $mdp =$form->get('password')->getData();
             $cfrmdp =$form->get('confirmPassword')->getData();
             if($mdp !== $cfrmdp){
-                $this->addFlash('verify_error', 'Passwords are not identical.');
+                $this->addFlash('error', 'Passwords are not identical.');
                 return $this->redirectToRoute('app_register');
             }
             
@@ -98,7 +98,7 @@ class RegistrationController extends AbstractController
         }
 
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
-        $this->addFlash('success', 'Your email address has been verified.');
+        
 
         return $this->redirectToRoute('choice_register');
     }

@@ -19,9 +19,29 @@
         crossorigin=""></script>
         <script type="text/javascript" src="{{ asset('js/map.js') }}" defer></script>
         {% endblock %}
+        <style>
+            .alert{
+                padding:10px;
+                color:white;
+                text-align:center;
+            }
+
+            .alert-success{
+                background-color:green;
+            }
+
+            .alert-error{
+                background-color:red;
+            }
+
+            .alert-info{
+                background-color:blue;
+            }
+        </style>
     </head>
     <body>
         {{include('header/header.html.twig')}}
+        {{include('home/_flash_messages.html.twig')}}
         {% block body %}
         {% endblock %}
         {{include('footer/footer.html.twig')}}
