@@ -6,7 +6,9 @@
 parameters:
   app.logo_directory: "%kernel.project_dir%/public/uploads/logo"
   app.coaches_directory: "%kernel.project_dir%/public/uploads/coaches"
+  app.customers_directory: "%kernel.project_dir%/public/uploads/customers"
   app.images_directory: "%kernel.project_dir%/public/uploads/images"
+  app.trainings_directory: "%kernel.project_dir%/public/uploads/trainings"
   # les langues disponbles
   app.locales: [en, fr]
 services:

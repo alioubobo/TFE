@@ -2,14 +2,15 @@
 
 namespace App\Controller;
 
+use App\Entity\Images;
 use App\Entity\Coaches;
 use App\Form\CoachesType;
 use App\Repository\CoachesRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CoachesController extends AbstractController
 {
@@ -23,7 +24,18 @@ class CoachesController extends AbstractController
         $form = $this->createForm(CoachesType::class, $coach);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {           
-            $coach = $form->getData();                 
+            $coach = $form->getData();   
+            
+            $image = $form->get('images')->getData();
+           
+            //on génère un nouveau nom de fichier
+            $fichier = md5(uniqid()) . '.' .$image->guessExtension();
+            //on copie le fichier dans le dossier uploads
+            $image->move($this->getParameter('app.coaches_directory'), $fichier); 
+            
+            $img = new Images();
+            $img->setImage($fichier);           
+            $coach->setImage($img);
 
             $entityManager->persist($coach);
             $entityManager->flush();

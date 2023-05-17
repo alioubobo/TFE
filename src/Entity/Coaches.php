@@ -50,7 +50,7 @@ class Coaches
     private $users;
 
     /**
-     * @ORM\OneToOne(targetEntity=Images::class, mappedBy="coach")
+     * @ORM\OneToOne(targetEntity=Images::class, mappedBy="coach", cascade={"persist", "remove"})
      */
     private $image;
 
@@ -199,7 +199,17 @@ class Coaches
     }
 
     public function setImage(?Images $image): self
-    {
+    {   
+        // unset the owning side of the relation if necessary
+        if ($image === null && $this->image !== null) {
+            $this->image->setCoach(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($image !== null && $image->getCoach() !== $this) {
+            $image->setCoach($this);
+        }
+
         $this->image = $image;
 
         return $this;

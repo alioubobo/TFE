@@ -8,23 +8,22 @@
         <h5 class="alert alert-danger">{{ message }}</h5>
     </div>   
 {% endfor %}
-{# {{ render(path('search_coaches')) }} #}
+{{ render(path('search_coaches')) }}
 {% if coaches is defined and coaches is not null and coaches is not empty %}
 <div class="album py-5 ">
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             {% for coache in coaches %}
-                <div class="col">
+                <div class="col">                    
                     <div class="card shadow-sm">
-                        {#<a href={{path('show_coach', {id:coache.id})}}><img class="card-img-bottom" src="{{ asset('/uploads/logos/'~coache.image) }}" alt="photo du coach" width="300px" height="300px"></a>#}
+                        <a href={{path('show_coach', {id:coache.id})}}><img class="card-img-bottom" src="{{ asset('/uploads/coaches/'~coache.image) }}" alt="photo du coach" width="300px" height="300px"></a>
                     </div>
-                    {# {% if app.user %} #}
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-primary"><a href={{path('show_coach', {id:coache.id})}}>Voir</a></button>
-                        {# <button type="button" class="btn btn-sm btn-outline-secondary"><a href={{path('stage_new')}}>Stage</a></button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary"><a href={{path('promotion_new')}}>Promotion</a></button> #}
-                    </div>     
-                    {# {% endif %}                #}
+                    <h3>{{coache.name}}</h3>
+                    {% if app.user %}
+                        <div class="btn-group">                        
+                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href={{path('add_trainings')}}>Ajouter une formation</a></button>
+                        </div>     
+                    {% endif %}               
                 </div>                
             {% endfor %}                        
         </div>

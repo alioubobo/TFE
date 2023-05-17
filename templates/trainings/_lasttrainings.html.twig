@@ -2,14 +2,17 @@
 <div class="album py-5 ">
     <div class="container">
      <h2 class" ">{% trans %}Recent training courses{% endtrans %}</h2>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-        {% for lasttraining in lasttrainings %}
-            <div class="col">            
-                <div class="card shadow-sm">                    
-                    <a href={{path('show_training', {id:lasttraining.id})}}>{% trans %} photo of the course {% endtrans %}</a>
-                </div>            
-            </div>
-        {% endfor %}
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for lasttraining in lasttrainings %}            
+                    <div class="col">      
+                        {% for image in lasttraining.images %}
+                                <div>
+                                    <a href={{path('show_training', {id:lasttraining.id})}}><img class="card-img-bottom" src="{{ asset('/uploads/trainings/'~image.image) }}" alt="training image" width="200px" height="400px" ></a>
+                                </div>
+                        {% endfor %} 
+                        <h2 class="text-center">{{lasttraining.name}}</h2>
+                    </div>
+            {% endfor %}
         </div>
     </div>
 </div> 

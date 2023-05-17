@@ -56,7 +56,7 @@ class Trainings
     private $coache;
 
     /**
-     * @ORM\OneToMany(targetEntity=Images::class, mappedBy="training")
+     * @ORM\OneToMany(targetEntity=Images::class, mappedBy="training", cascade={"persist", "remove"})
      */
     private $images;
 

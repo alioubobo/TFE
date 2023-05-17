@@ -2,15 +2,16 @@
 
 namespace App\Controller;
 
+use App\Entity\Images;
 use App\Entity\Trainings;
 use App\Form\TrainingsType;
 use App\Repository\TrainingsRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class TrainingsController extends AbstractController
 {
@@ -23,8 +24,28 @@ class TrainingsController extends AbstractController
        
         $form = $this->createForm(TrainingsType::class, $trainings);
         $form->handleRequest($request);
+        
         if ($form->isSubmitted() && $form->isValid()) {           
-            $trainings = $form->getData();                 
+            $trainings = $form->getData();  
+             //on récupère les images transmises par le formulaire
+             $imgs = $form->get('images')->getData();
+            
+             //on boucle sur les images
+            foreach($imgs as $images){
+                 //on génère un nouveaunom de fichier
+                 $fichier = md5(uniqid()) . '.' .$images->guessExtension();
+ 
+                 //on copie le fichier dans le dossier uploads
+                 $images->move(
+                     $this->getParameter('app.trainings_directory'),
+                     $fichier
+                 );
+                 //on stocke l'image dans la base de données (seulement son nom)
+                 $img = new Images();
+                 $img->setImage($fichier);
+                 $trainings->addImage($img);
+ 
+            }               
 
             $entityManager->persist($trainings);
             $entityManager->flush();

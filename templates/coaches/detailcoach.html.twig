@@ -10,23 +10,13 @@
         </div>   
         <div class=" ">
             <h4>Coach: {{coach.name}}</h4>  
-            <h4>description: {{coach.description}}</h4> 
-            <h4>reseau social: {{coach.getSocialNetworkingLink}}</4>                 
+            <h4>Description: {{coach.description}}</h4> 
+            <h4>Site web: {{coach.getSocialNetworkingLink}}</4>                 
             {% for training in coach.trainings %}
                 <h4>Formation: {{training.name}}</h4>
             {% endfor %} 
         </div>      
-    </div>
-    <br>
-    {# <h4>Les images du prestataire</h4>
-    <br>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">    
-        {% for image in prestataire.images %} 
-        <div class="row">       
-            <img class="card-img-bottom" src="{{ asset('/uploads/coaches/'~image.image) }}" alt="Image du coach" height="350px" width="300px" >
-        </div>
-        {% endfor %}   
-    </div> #}
+    </div>   
 </div>    
 <br>
 {{ render(path('search_coaches')) }}

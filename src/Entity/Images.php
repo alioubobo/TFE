@@ -37,6 +37,12 @@ class Images
      */
     private $customer;
 
+    public function __toString()
+    {
+        $this->getImage();
+        return $this->image;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -21,7 +21,7 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class, [               
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Enter an e-mail address',
+                        'message' => 'Entrer une adresse e-mail',
                     ]),
                 ],
             ])

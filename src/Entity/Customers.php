@@ -35,7 +35,7 @@ class Customers
     private $users;
 
     /**
-     * @ORM\OneToOne(targetEntity=Images::class, mappedBy="coach")
+     * @ORM\OneToOne(targetEntity=Images::class, mappedBy="coach", cascade={"persist", "remove"})
      */
     private $image;
 
@@ -59,6 +59,12 @@ class Customers
         $this->appointments = new ArrayCollection();
         $this->comments = new ArrayCollection();
         $this->favorites = new ArrayCollection();              
+    }
+
+    public function __toString()
+    {
+        $this->getName();
+        return $this->name;
     }
 
     public function getId(): ?int
@@ -119,6 +125,14 @@ class Customers
 
     public function setImage(?Images $image): self
     {
+        if ($image === null && $this->image !== null) {
+            $this->image->setCoach(null);
+        }
+
+        if ($image !== null && $image->getCustomer() !== $this) {
+            $image->setCustomer($this);
+        }
+
         $this->image = $image;
 
         return $this;
