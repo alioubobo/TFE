@@ -1,0 +1,46 @@
+/*Les messages flash*/
+.alert {
+  padding: 10px;
+  color: white;
+  text-align: center;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+
+.alert-success {
+  background-color: green;
+}
+
+.alert-error {
+  background-color: red;
+}
+
+.alert-info {
+  background-color: blue;
+}
+
+/*Custum banner*/
+/* .navbar-toggler-icon {
+  background-color: red;
+} */
+/*comment appliqué le z-index*/
+.test1 {
+  position: relative;
+  height: 430px;
+}
+
+.test2 {
+  position: absolute;
+  z-index: 1;
+}
+
+.test3 {
+  position: absolute;
+  top: 150px;
+  right: 200px;
+  width: 600px;
+  height: 430px;
+  z-index: 2;
+  font-size: 200%;
+}
