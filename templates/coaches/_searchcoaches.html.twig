@@ -1,29 +1,31 @@
 {% block body %}
 <div class="container">
-    <h2>{% trans %}What training are you looking for?{% endtrans %}</h2> 
-    <form class="d-flex" action={{path('filter_search')}} method="Post">        
-            <div class="form-group ">
-                <label for="name">Coach</label>
-                <input list="name" type="text"  name="nameCoach" class="form-control" placeholder="Coach"/>
-                <datalist id="name">                
-                     {% for coach in coaches %}                    
-                        <option value={{coach.name}}>
-                    {% endfor %}      
-                </datalist>
-            </div>
-            <div class="form-group ">
-                <label for="name">{% trans %}Training{% endtrans %}</label>
-                <input list="trainings" type="text" name="nametrainings" class="form-control"  placeholder="{% trans %}Training{% endtrans %}" />
-                  <datalist id="trainings">              
-                    {% for training in trainings %}                    
-                        <option value={{training.name}}>
-                    {% endfor %}                 
-                </datalist>
-            </div>                     
-            <div class="form-group "> 
-                <br>  
-                <button class="btn btn-primary " type="submit">{% trans %}Search{% endtrans %}</button>
-            </div>
-    </form>    
+    <div class="col-md-6 mx-auto mt-5">
+        <h2>{% trans %}What training are you looking for?{% endtrans %}</h2> 
+        <form class="d-flex" action={{path('filter_search')}} method="Post">        
+                <div class="form-group ">
+                    <label for="name">Coach</label>
+                    <input list="name" type="text"  name="nameCoach" class="form-control" placeholder="Coach"/>
+                    <datalist id="name">                
+                        {% for coach in coaches %}                    
+                            <option value={{coach.name}}>
+                        {% endfor %}      
+                    </datalist>
+                </div>
+                <div class="form-group ">
+                    <label for="name">{% trans %}Training{% endtrans %}</label>
+                    <input list="trainings" type="text" name="nametrainings" class="form-control"  placeholder="{% trans %}Training{% endtrans %}" />
+                    <datalist id="trainings">              
+                        {% for training in trainings %}                    
+                            <option value={{training.name}}>
+                        {% endfor %}                 
+                    </datalist>
+                </div>                     
+                <div class="form-group "> 
+                    <br>  
+                    <button class="btn btn-primary " type="submit">{% trans %}Search{% endtrans %}</button>
+                </div>
+        </form> 
+    </div>   
 </div> 
 {% endblock %}

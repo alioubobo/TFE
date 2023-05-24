@@ -3,19 +3,23 @@
 {% block title %}Description formation{% endblock %}
 
 {% block body %}
-<div class="container">    
-    <h4>Nom: {{training.name}}</h4>
-    <h4>Description: {{training.description}}</h4>  
-    <h4>Prix: {{training.price}}</h4> 
-    {% for coach in training.coache %}
-        <h4>Coach: {{coach.name}}</h4>
-    {% endfor %} 
-    {% for image in training.images %}
+<div class="container">  
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 ">
         <div>
-            <img class="card-img-bottom" src="{{ asset('/uploads/trainings/'~image.image) }}" alt="categorie image" width="200px" height="400px" >
+            {% for image in training.images %}
+            <div>
+                <img class="card-img-bottom" src="{{ asset('/uploads/trainings/'~image.image)|imagine_filter('carre')}}" alt="{{training.name}}" >
+            </div>
+            {% endfor %}  
         </div>
-    {% endfor %}      
+        <div>
+            <h4>Nom: {{training.name}}</h4>
+            <h4>Description: {{training.description}}</h4>  
+            <h4>Prix: {{training.price}}</h4> 
+            {% for coach in training.coache %}
+                <h4>Coach: {{coach.name}}</h4>
+            {% endfor %}
+        </div>
+    </div>  
 </div>
-<br>
-{# {{ render(path('recherche_presta')) }} #}
 {% endblock %}

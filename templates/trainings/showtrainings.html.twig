@@ -13,11 +13,11 @@
                     <div class="card shadow-sm"> 
                         {% for image in training.images %}
                             <div>
-                                <a href={{path('show_training', {id:training.id})}}><img class="card-img-bottom" src="{{ asset('/uploads/trainings/'~image.image) }}" alt="training image" width="200px" height="400px" ></a>
+                                <a href={{path('show_training', {id:training.id})}}><img class="card-img-bottom" src="{{ asset('/uploads/trainings/'~image.image)|imagine_filter('carre') }}" alt="{{training.name}}"></a>
                             </div>
-                        {% endfor %} 
-                        <h3>{{training.name}}</h3>                  
+                        {% endfor %}                                           
                     </div>
+                    <h3 class="text-center">{{training.name}}</h3>
                 </div>
             {% endfor %}            
         </div>
