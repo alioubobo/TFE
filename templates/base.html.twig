@@ -15,11 +15,12 @@
 
         {% block javascripts %}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-        crossorigin=""></script>
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+        <script src="http://matomo.local/index.php?module=CoreAdminHome&action=optOutJS&divId=matomo-opt-out&language=auto&showIntro=1"></script>
         <script type="text/javascript" src="{{ asset('js/map.js') }}" defer></script>
+        <script type="text/javascript" src="{{ asset('js/matomo.js') }}" defer></script>
         <script type="text/javascript" src="{{ asset('js/script.js') }}" defer></script>
-        {% endblock %}        
+        {% endblock %}     
     </head>
     <body>
         {{include('header/header.html.twig')}}

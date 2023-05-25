@@ -13,11 +13,11 @@
             {% endfor %}  
         </div>
         <div>
-            <h4>Nom: {{training.name}}</h4>
-            <h4>Description: {{training.description}}</h4>  
-            <h4>Prix: {{training.price}}</h4> 
+            <p>Nom: {{training.name}}</p>
+            <p>Description: {{training.description}}</p>  
+            <p>Prix: {{training.price}}</p> 
             {% for coach in training.coache %}
-                <h4>Coach: {{coach.name}}</h4>
+                <p>Coach: {{coach.name}}</p>
             {% endfor %}
         </div>
     </div>  
