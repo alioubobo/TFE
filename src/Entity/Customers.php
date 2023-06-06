@@ -35,7 +35,7 @@ class Customers
     private $users;
 
     /**
-     * @ORM\OneToOne(targetEntity=Images::class, mappedBy="coach", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=Images::class, mappedBy="customer", cascade={"persist", "remove"})
      */
     private $image;
 

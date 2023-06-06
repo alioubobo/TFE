@@ -19,6 +19,9 @@
             {% for coach in training.coache %}
                 <p>Coach: {{coach.name}}</p>
             {% endfor %}
+            {% if app.user %}
+                <p>Paiement</p>
+            {% endif %}
         </div>
     </div>  
 </div>

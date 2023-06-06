@@ -15,9 +15,16 @@ class UsersController extends AbstractController
     /**
      * @Route("/users", name="app_users")
      */
-    public function index(): Response
-    {
+    public function index(Request $request): Response
+    {   
+        // if($request->request->get('coach')){
+        //     return $this->render('users/coachprofile.html.twig');
+        // }elseif($request->request->get('customer')){
+        //     return $this->render('users/customerprofile.html.twig');
+        // }
+
         return $this->render('users/coachprofile.html.twig');
+        
     }
 
     /**
