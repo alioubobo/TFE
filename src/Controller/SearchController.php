@@ -47,7 +47,8 @@ class SearchController extends AbstractController
          //permet de vérifier si la variable est vide pour afficher un message 
         if(empty($coaches)){
             $message = $translator->trans('No results for this item!');
-            $this->addFlash("pasdecoach", $message);
+            // $this->addFlash("pasdecoach", $message);
+            $this->addFlash('info', "Oups il n'y a pas de correspondant.");
         }
         
         //la pagignation

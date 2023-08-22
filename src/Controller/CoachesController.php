@@ -11,12 +11,17 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class CoachesController extends AbstractController
 {
     /**
      * @Route("/addcoaches", name="add_coaches")
+     *     
      */
+
+    //  * @SecuritY("has_role('ROLE_USER')")
+    //consiste à securiser la méthode
     public function addCoaches(EntityManagerInterface $entityManager, Request $request): Response
     {
         $coach = new Coaches();
