@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}{% trans %}Page d'erreur{% endtrans %}{% endblock %}
+
+{% block body %}       
+    <div class="container ">
+        <div class="page-error">
+            <div class="text-center">
+                <div class="">
+                    <h1 class=" text-primary">HTTP Error {{ exception.statusCode }}</h1>
+                    <p class="">{{ exception.statusText }}</p>                  
+                    <p >Oups! vous n'êtes pas au endroit</p>
+                    <a href={{path('app_home')}}  class="rtr-accueil text-decoration-none">Retourner à la page d'accueil ></a> 
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

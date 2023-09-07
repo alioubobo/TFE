@@ -21,10 +21,19 @@
 }
 
 /*Les messages d'erreur formulaire*/
-
 label.error {
   font-weight: 700;
   display: block;
   color: #f00;
   font-size: 14px;
+}
+
+/*Customisation de la page d'erreur*/
+.page-error {
+  height: 500px;
+  padding-top: 150px;
+}
+
+.rtr-accueil {
+  background-color: greenyellow;
 }

@@ -5,10 +5,8 @@ $(function () {
   $(".navbar-toggler").css("background-color", "white");
 
   //Body
-  // $("#inputEmail").css("background-color", "green");
   //***Validation des formulaires
   $("form").attr("id", "form");
-
   //Connexion
   $("#form").validate({
     rules: {
@@ -25,6 +23,7 @@ $(function () {
       form.submit();
     },
   });
+
   // $(document).ready(function () {
   //   $("#form").submit(function (event) {
   //     if ($("#contact_email").val().length === 0) {
