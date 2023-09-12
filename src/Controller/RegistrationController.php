@@ -28,6 +28,7 @@ class RegistrationController extends AbstractController
         $this->emailVerifier = $emailVerifier;
     }
 
+    //Enable to register
     /**
      * @Route("/register", name="app_register")
      */
@@ -83,6 +84,7 @@ class RegistrationController extends AbstractController
         ]);
     }
 
+    //Confirms registration
     /**
      * @Route("/verify/email", name="app_verify_email")
      */

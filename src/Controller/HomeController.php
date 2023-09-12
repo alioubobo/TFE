@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
+    //View home page
     /**
      * @Route("/", name="app_home")
      */
@@ -17,15 +18,16 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig');
     }
 
+    //Le changement d'une langue à une autre
     /**
      * @Route("/change_locale/{locale}", name="change_locale")
      */
     public function changeLocale($locale, Request $request)
     {
-        // On stocke la langue dans la session
+        //We store the language in the session
         $request->getSession()->set('_locale', $locale);
 
-        // On revient sur la page précédente
+        //Return to the previous page
         return $this->redirect($request->headers->get('referer'));
     }
 

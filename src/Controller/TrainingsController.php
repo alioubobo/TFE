@@ -17,11 +17,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 class TrainingsController extends AbstractController
 {
     /**
+     *
      * @Route("/addtrainings", name="add_trainings")
-     *      
+     * consists of securing the route
+     * @Security("is_granted('ROLE_CAOCH')")      
      */
-    //* @SecuritY("has_role('ROLE_USER')")
-    //consiste à securiser la méthode
+    
     public function addCoaches(EntityManagerInterface $entityManager, Request $request): Response
     {
         $trainings = new Trainings();
@@ -31,20 +32,20 @@ class TrainingsController extends AbstractController
         
         if ($form->isSubmitted() && $form->isValid()) {           
             $trainings = $form->getData();  
-             //on récupère les images transmises par le formulaire
+             //recover the images sent by the form
              $imgs = $form->get('images')->getData();
             
              //on boucle sur les images
             foreach($imgs as $images){
-                 //on génère un nouveaunom de fichier
+                 //generates a new file name
                  $fichier = md5(uniqid()) . '.' .$images->guessExtension();
  
-                 //on copie le fichier dans le dossier uploads
+                 //copies the file to the uploads folder
                  $images->move(
                      $this->getParameter('app.trainings_directory'),
                      $fichier
                  );
-                 //on stocke l'image dans la base de données (seulement son nom)
+                 
                  $img = new Images();
                  $img->setImage($fichier);
                  $trainings->addImage($img);
@@ -72,8 +73,8 @@ class TrainingsController extends AbstractController
 
         $trainings = $paginator->paginate(
             $data, 
-            $request->query->getInt('page', 1),//1 pour afficher par defaut la page 1
-            3 //3 répresente le nbre d'élément par page
+            $request->query->getInt('page', 1), //1 to show page 1 by default
+            3 //3 represents the number of elements per page
         );
         return $this->render('trainings/showtrainings.html.twig', [
             'trainings' => $trainings,
@@ -104,19 +105,19 @@ class TrainingsController extends AbstractController
      * @Route("/forwardtraining", name="forward_training")
      */
 
-    //Recuperation de la formation mise en avant
+   //Recuperation of the highlighted training
     public function forwardTraining(TrainingsRepository $trainingsRepository): Response
     {
         $this->trainingsRepository = $trainingsRepository;
 
         $forward_training = $this->trainingsRepository->isForward();
 
-        // Si aucune formation n'a été mise en avant, prendre la première formation validée
+        // If no course has been highlighted, select the first validated course
         if(!$forward_training){
             $forward_training = $this->trainingsRepository->findOneBy(['validated' => 1]);
         }
 
-        // Si plus d'une catégorie a été mise en avant, prendre la première catégorie en avant
+        // // If no course has been highlighted, select the first validated course
         if(is_array($forward_training)) {
             $forward_training = $forward_training[0];
         } 

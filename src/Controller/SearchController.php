@@ -14,6 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class SearchController extends AbstractController
 {
+    //Enables multifactor research
     /**
      * @Route("/searchcoaches", name="search_coaches")
      */
@@ -29,33 +30,33 @@ class SearchController extends AbstractController
         ]);
     }
 
+    //To filter the data encoded in the form
     /**
      * @Route("/filtersearch", name="filter_search", methods={"POST", "GET"})
      */
-
-     //Permet de filtrer les données encoder dans le formulaire
+    
      public function filterSearch(Request $request, EntityManagerInterface $em, 
      PaginatorInterface $paginator,
      TranslatorInterface $translator): Response
     {
-         //Récupération des données via le name du formulaire
+         //Recovering data via the form name
          $name = $request->request->get('nameCoach');
          $training = $request->request->get('nametrainings');         
         
          $coaches = $em->getRepository(Coaches::class)->findCoach($name, $training);   
         
-         //permet de vérifier si la variable est vide pour afficher un message 
+         //check if the variable is empty to display a message
         if(empty($coaches)){
             $message = $translator->trans('No results for this item!');
             // $this->addFlash("pasdecoach", $message);
-            $this->addFlash('info', "Oups il n'y a pas de correspondant.");
+            $this->addFlash('info', "Oops there is no correspondent.");
         }
         
-        //la pagignation
+        //pagination
         $coaches = $paginator->paginate( 
             $coaches,           
-            $request->query->getInt('page', 1),//1 pour afficher par defaut la page 1
-            3 //3 répresente le nbre d'élément par page
+            $request->query->getInt('page', 1), //1 to show page 1 by default
+            3 //3 represents the number of elements per page
         );
 
         return $this->render('coaches/_searchresult.html.twig', [

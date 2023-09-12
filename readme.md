@@ -1,23 +1,23 @@
-# Aller à la Rencontre de Soi
+# Meeting yourself
 
-ARS est un site de coaching en ligne, dans le domaine du developpemnt personnel
+ARS is an online personal development coaching website.
 
-## Environnement de développement
+## Development environment
 
-### Prérequis
+### Prerequisites
 
 PHP 7.3
 Composer
 Symfony CLI
 
-### Lancer l'environnement de developpement
+### Launching the development environment
 
 ### commandes
 
 composer install
 symfony server -d
 
-### Lancer des tests
+### Running tests
 
 ### commande
 

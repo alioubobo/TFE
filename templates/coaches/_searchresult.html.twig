@@ -18,12 +18,7 @@
                     <div class="card shadow-sm">
                         <a href={{path('show_coach', {id:coache.id})}}><img class="card-img-bottom" src="{{ asset('/uploads/coaches/'~coache.image)|imagine_filter('carre') }}" alt="{{coache.name}}"></a>
                     </div>
-                    <h3 class="text-center">{{coache.name}}</h3>
-                    {% if app.user %}
-                        <div class="btn-group">                        
-                            {# <button type="button" class="btn btn-sm btn-outline-secondary"><a href={{path('add_trainings')}}>Ajouter une formation</a></button> #}
-                        </div>     
-                    {% endif %}               
+                    <h3 class="text-center">{{coache.name}}</h3>                                   
                 </div>                
             {% endfor %}                        
         </div>

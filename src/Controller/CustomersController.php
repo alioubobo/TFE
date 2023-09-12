@@ -12,14 +12,17 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
+
 class CustomersController extends AbstractController
 {
     /**
+     * 
      * @Route("/customers", name="add_customers")
-     *      
+     * consists of securing the route 
+     * @Security("is_granted('ROLE_ADMIN')")    
      */
-    //* @SecuritY("has_role('ROLE_USER')")
-    //consiste à securiser la méthode
+
+    //consists in creating a coach    
     public function addcustomers(EntityManagerInterface $entityManager, Request $request): Response
     {
         $customer = new Customers();
@@ -31,9 +34,9 @@ class CustomersController extends AbstractController
             
             $image = $form->get('images')->getData();
            
-            //on génère un nouveau nom de fichier
+            //generates a new file name
             $fichier = md5(uniqid()) . '.' .$image->guessExtension();
-            //on copie le fichier dans le dossier uploads
+            //copies the file to the uploads folder
             $image->move($this->getParameter('app.customers_directory'), $fichier); 
             
             $img = new Images();

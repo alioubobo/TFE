@@ -21,7 +21,7 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class, [               
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Entrer une adresse e-mail',
+                        'message' => 'Enter your e-mail address',
                     ]),
                 ],
             ])
@@ -29,18 +29,16 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'Vous devez accepter nos conditions.',
+                        'message' => 'You must accept our conditions.',
                     ]),
                 ],
             ])            
-            ->add('password', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+            ->add('password', PasswordType::class, [                
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez entrer un mot de passe',
+                        'message' => 'Please enter your password',
                     ]),
                     new Length([
                         'min' => 8,
@@ -50,14 +48,12 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('confirmPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+            ->add('confirmPassword', PasswordType::class, [                
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez confirmer votre mot de passe',
+                        'message' => 'Please confirm your password',
                     ]),
                     new Length([
                         'min' => 8,
@@ -67,7 +63,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('user_type')
+            ->add('user_type', TextareaType::class)
         ;
     }
 

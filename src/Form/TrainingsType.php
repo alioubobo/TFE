@@ -4,9 +4,11 @@ namespace App\Form;
 
 use App\Entity\Trainings;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class TrainingsType extends AbstractType
@@ -14,10 +16,10 @@ class TrainingsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('description')            
-            ->add('price')
-            ->add('creation_date')
+            ->add('name', TextareaType::class)
+            ->add('description', TextareaType::class)            
+            ->add('price', IntegerType::class)
+            ->add('creation_date', DateType::class)
             ->add('images', FileType::class,[
                 'label' => 'Image',
                 'multiple' => true,

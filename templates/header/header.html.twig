@@ -33,6 +33,7 @@
         <div class="col-md-3 text-end">
           {% if app.user %}
             <button type="button" class="btn btn-outline-primary me-2"><a class="nav-link" href={{path('app_logout')}}>{% trans %}Logout{% endtrans %}</a></button>
+            <button type="button" class="btn btn-primary"><a class="nav-link" href={{path('app_users')}}>{% trans %}Mon profil{% endtrans %}</a></button>
           {% else %}  
             <button type="button" class="btn btn-outline-primary me-2"><a class="nav-link" href={{path('app_login')}}>{% trans %}Connexion{% endtrans %}</a></button>
             <button type="button" class="btn btn-primary"><a class="nav-link" href={{path('app_register')}}>{% trans %}Registration{% endtrans %}</a></button>

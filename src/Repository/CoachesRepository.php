@@ -80,17 +80,17 @@ class CoachesRepository extends ServiceEntityRepository
 
     public function findCoach($name = null, $training = null)
     {
-        //liaisons des tables
+       //table links
         $queryBuilder = $this->createQueryBuilder('c');        
 
-        //si le champ nom est rempli
+        //if the name field is populated
         if($name){
             $queryBuilder
             ->andWhere('c.name LIKE :nameCoach')
             ->setParameter('nameCoach', '%'.$name.'%');
         }
 
-        //si le champ formation est rempli
+        //if the training field is populated 
         if($training){
             $queryBuilder
             ->join('c.trainings', 't')

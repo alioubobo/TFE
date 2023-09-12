@@ -8,15 +8,16 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class CustomersType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('first_name')
-            ->add('users')
+            ->add('name', TextareaType::class)
+            ->add('first_name', TextareaType::class)
+            ->add('users', TextareaType::class)
             ->add('images', FileType::class,[
                 'label' => 'Image',
                 'multiple' => false,
@@ -25,7 +26,7 @@ class CustomersType extends AbstractType
             ])
             // ->add('favorites')
             ->add('save', SubmitType::class, [
-                'label' => 'ajouter',
+                'label' => 'add',
                 'attr' => ['class' => 'submit'],
                 'attr' => ['class' => 'btn-primary'],
             ])

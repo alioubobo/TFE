@@ -1,22 +1,30 @@
 $(function () {
   //Tout a été chargét il un sousis
-  console.log("Dom chargé!");
+  console.log("Dom chargé! ???");
+
   //Header
   $(".navbar-toggler").css("background-color", "white");
 
   //Body
   //***Validation des formulaires
   $("form").attr("id", "form");
-  //Connexion
+  //Connexion, inscription, contact
   $("#form").validate({
     rules: {
       email: {
-        minlength: 2,
+        required: true,
+        email: true,
+      },
+      password: {
+        password: true,
       },
     },
     messages: {
       email: {
         required: "Entrez une adresse email valide",
+      },
+      password: {
+        required: "Entrez votre mot de passe",
       },
     },
     submitHandler: function (form) {

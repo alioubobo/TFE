@@ -13,14 +13,15 @@
             {% endfor %}  
         </div>
         <div>
-            <p>Nom: {{training.name}}</p>
+            <p>Name: {{training.name}}</p>
             <p>Description: {{training.description}}</p>  
-            <p>Prix: {{training.price}}</p> 
+            <p>Price: {{training.price}}</p> 
             {% for coach in training.coache %}
                 <p>Coach: {{coach.name}}</p>
             {% endfor %}
             {% if app.user %}
-                <p>Paiement</p>
+                <p>Payment</p>
+                <button type="button" class="btn btn-sm btn-primary"><a class="text-decoration-none text-white" href="#">pay</a></button>
             {% endif %}
         </div>
     </div>  

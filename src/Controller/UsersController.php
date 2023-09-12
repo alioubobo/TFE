@@ -4,26 +4,34 @@ namespace App\Controller;
 
 use App\Form\EditProfileType;
 use Doctrine\ORM\EntityManagerInterface;
+use phpDocumentor\Reflection\Types\Void_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;
+
 class UsersController extends AbstractController
 {
     /**
      * @Route("/users", name="app_users")
      */
-    public function index(Request $request): Response
-    {   
-        // if($request->request->get('coach')){
-        //     return $this->render('users/coachprofile.html.twig');
-        // }elseif($request->request->get('customer')){
-        //     return $this->render('users/customerprofile.html.twig');
-        // }
+    public function index( Request $request): Response
+    {      
+        $user = $this->getUser(); 
+        //check the user's role to direct them to the correct template
+        if(in_array('COACH', $user->getRoles())){
+            return $this->render('users/coachprofile.html.twig');
+        }else if(in_array('CUSTOMER', $user->getRoles())){
+            return $this->render('users/customerprofile.html.twig');
+        }else if(in_array('ADMIN', $user->getRoles())){
+            return $this->render('users/adminprofile.html.twig');
+        }        
 
-        return $this->render('users/coachprofile.html.twig');
+        return $this->render('users/_userprofile.html.twig');
         
     }
 
@@ -33,7 +41,7 @@ class UsersController extends AbstractController
     public function editProfile(EntityManagerInterface $entityManager,Request $request): Response
     {
         $user = $this->getUser();
-
+        
         $form = $this->createForm(EditProfileType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {           
@@ -46,7 +54,17 @@ class UsersController extends AbstractController
             return $this->redirectToRoute('app_users');
         }
 
-        return $this->renderForm('users/editprofile.html.twig', [
+        if(in_array('COACH', $user->getRoles())){
+             return $this->renderForm('users/editcoachprofile.html.twig', [
+                'form' => $form,
+            ]);
+        }else if(in_array('CUSTOMER', $user->getRoles())){
+            return $this->renderForm('users/editcustomerprofile.html.twig', [
+                'form' => $form,
+            ]);
+        }
+
+        return $this->renderForm('users/editcustomerprofile.html.twig', [
             'form' => $form,
         ]);
     }
@@ -56,10 +74,13 @@ class UsersController extends AbstractController
      */
     public function editPassword(EntityManagerInterface $entityManager, Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
+        $session = $request->getSession();
+       
+
         if($request->isMethod('Post')){
 
             $user = $this->getUser();
-
+            
             if($request->request->get('pass') == $request->request->get('pass2')){
                 $user->setPassword($passwordEncoder->encodePassword($user, $request->request->get('pass')));
                 $entityManager->flush();
@@ -67,7 +88,7 @@ class UsersController extends AbstractController
 
                 return $this->redirectToRoute('app_users');
             }else{
-                $this->addFlash('error', 'the passwors are diffrent.');
+                $this->addFlash('error', 'the passwors are diffirent.');
             }
         }        
 

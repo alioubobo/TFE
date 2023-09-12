@@ -16,12 +16,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 class CoachesController extends AbstractController
 {
     /**
+     * 
      * @Route("/addcoaches", name="add_coaches")
-     *     
-     */
+     * consists of securing the route
+     * @Security("is_granted('ROLE_ADMIN')")    
+     */    
 
-    //  * @SecuritY("has_role('ROLE_USER')")
-    //consiste à securiser la méthode
+    //consists in creating a coach
     public function addCoaches(EntityManagerInterface $entityManager, Request $request): Response
     {
         $coach = new Coaches();
@@ -33,9 +34,9 @@ class CoachesController extends AbstractController
             
             $image = $form->get('images')->getData();
            
-            //on génère un nouveau nom de fichier
+            //generates a new file name
             $fichier = md5(uniqid()) . '.' .$image->guessExtension();
-            //on copie le fichier dans le dossier uploads
+            //copies the file to the uploads folder
             $image->move($this->getParameter('app.coaches_directory'), $fichier); 
             
             $img = new Images();
@@ -56,8 +57,7 @@ class CoachesController extends AbstractController
      /**
      * @Route("/showcoach/{id}", name="show_coach")
      */
-
-     //Affichage d'un coach
+     
      public function showCoach(Coaches $coach): Response
      {
         return $this->render('coaches/detailcoach.html.twig', [
