@@ -26,7 +26,7 @@ class CustomersType extends AbstractType
             ])
             // ->add('favorites')
             ->add('save', SubmitType::class, [
-                'label' => 'add',
+                'label' => 'Add',
                 'attr' => ['class' => 'submit'],
                 'attr' => ['class' => 'btn-primary'],
             ])

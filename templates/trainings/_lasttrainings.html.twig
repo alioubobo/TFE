@@ -10,7 +10,8 @@
                                     <a href={{path('show_training', {id:lasttraining.id})}}><img class="card-img-bottom" src="{{ asset('/uploads/trainings/'~image.image)|imagine_filter('carre') }}" alt="{{lasttraining.name}}"></a>
                                 </div>
                         {% endfor %} 
-                        <p class="text-center">{{lasttraining.name}}</p>
+                        <h1 class="text-center">{{lasttraining.name}}</h1>
+                        <h3 class="text-center">{{lasttraining.description}}</h3>
                     </div>
             {% endfor %}
         </div>

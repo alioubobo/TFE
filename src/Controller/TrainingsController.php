@@ -6,6 +6,7 @@ use App\Entity\Images;
 use App\Entity\Trainings;
 use App\Form\TrainingsType;
 use App\Repository\TrainingsRepository;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,17 +14,17 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Stripe\StripeClient;
 
 class TrainingsController extends AbstractController
 {
     /**
-     *
      * @Route("/addtrainings", name="add_trainings")
      * consists of securing the route
      * @Security("is_granted('ROLE_CAOCH')")      
-     */
+    */
     
-    public function addCoaches(EntityManagerInterface $entityManager, Request $request): Response
+    public function addtrainigs(EntityManagerInterface $entityManager, Request $request): Response
     {
         $trainings = new Trainings();
        
@@ -104,8 +105,7 @@ class TrainingsController extends AbstractController
     /**
      * @Route("/forwardtraining", name="forward_training")
      */
-
-   //Recuperation of the highlighted training
+    //Recuperation of the highlighted training
     public function forwardTraining(TrainingsRepository $trainingsRepository): Response
     {
         $this->trainingsRepository = $trainingsRepository;
@@ -117,7 +117,7 @@ class TrainingsController extends AbstractController
             $forward_training = $this->trainingsRepository->findOneBy(['validated' => 1]);
         }
 
-        // // If no course has been highlighted, select the first validated course
+        // If no course has been highlighted, select the first validated course
         if(is_array($forward_training)) {
             $forward_training = $forward_training[0];
         } 
@@ -126,4 +126,6 @@ class TrainingsController extends AbstractController
             'forwardtraining' => $forward_training,
         ]);
     }
+    
+
 }

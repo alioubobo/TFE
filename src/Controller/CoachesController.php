@@ -16,12 +16,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 class CoachesController extends AbstractController
 {
     /**
-     * 
      * @Route("/addcoaches", name="add_coaches")
      * consists of securing the route
      * @Security("is_granted('ROLE_ADMIN')")    
-     */    
-
+     */ 
     //consists in creating a coach
     public function addCoaches(EntityManagerInterface $entityManager, Request $request): Response
     {

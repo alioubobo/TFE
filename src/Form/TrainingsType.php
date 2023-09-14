@@ -31,7 +31,7 @@ class TrainingsType extends AbstractType
             ->add('forward')
             // ->add('trainingsLang')
             ->add('save', SubmitType::class, [
-                'label' => 'ajouter',
+                'label' => 'Add',
                 'attr' => ['class' => 'submit'],
                 'attr' => ['class' => 'btn-primary'],
             ])

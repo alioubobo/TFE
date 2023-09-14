@@ -20,8 +20,18 @@
                 <p>Coach: {{coach.name}}</p>
             {% endfor %}
             {% if app.user %}
-                <p>Payment</p>
-                <button type="button" class="btn btn-sm btn-primary"><a class="text-decoration-none text-white" href="#">pay</a></button>
+                <div >
+                    <h2>{% trans %}Proceseder au paiement{% endtrans %}</h2> 
+                    <form class="d-flex" action={{path('app_checkout')}} method="Post">        
+                            <div class="form-group ">                            
+                                <input type="hidden"  name="price" class="form-control" value={{training.price}} /> 
+                                <input type="hidden"  name="quantity" class="form-control" value="1" /> 
+                                <input type="hidden"  name="name" class="form-control" value={{training.name}} />
+                                <input type="hidden"  name="description" class="form-control" value={{training.description}} />                                                           
+                                <button class="btn btn-primary " type="submit">{% trans %}Pay Now{% endtrans %}</button>
+                            </div>
+                    </form> 
+                </div>                    
             {% endif %}
         </div>
     </div>  

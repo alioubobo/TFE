@@ -1,6 +1,6 @@
 $(function () {
-  //Tout a été chargét il un sousis
-  console.log("Dom chargé! ???");
+  //Tout a été chargé!
+  console.log("Dom chargé! ");
 
   //Header
   $(".navbar-toggler").css("background-color", "white");
@@ -31,13 +31,4 @@ $(function () {
       form.submit();
     },
   });
-
-  // $(document).ready(function () {
-  //   $("#form").submit(function (event) {
-  //     if ($("#contact_email").val().length === 0) {
-  //       $("#contact_email").after("<span>Merci de remplir ce champ</span>");
-  //       event.preventDefaut();
-  //     }
-  //   });
-  // });
 });

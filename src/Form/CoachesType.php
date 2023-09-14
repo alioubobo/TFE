@@ -27,7 +27,7 @@ class CoachesType extends AbstractType
                 'required' => true
             ])
             ->add('save', SubmitType::class, [
-                'label' => 'ajouter',
+                'label' => 'Add',
                 'attr' => ['class' => 'submit'],
                 'attr' => ['class' => 'btn-primary'],
             ]) 
