@@ -32,7 +32,7 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/register", name="app_register")
      */
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
+    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthenticator $authenticator, EntityManagerInterface $entityManager, TranslatorInterface $translator): Response
     {
         $user = new Users();
         $user->setregistration(new DateTime(""));
@@ -45,7 +45,8 @@ class RegistrationController extends AbstractController
             $mdp =$form->get('password')->getData();
             $cfrmdp =$form->get('confirmPassword')->getData();
             if($mdp !== $cfrmdp){
-                $this->addFlash('error', 'Passwords are not identical.');
+                $message = $translator->trans('Passwords are not identical.');
+                $this->addFlash('error', $message);
                 return $this->redirectToRoute('app_register');
             }
             

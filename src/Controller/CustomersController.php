@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class CustomersController extends AbstractController
 {
@@ -23,7 +23,7 @@ class CustomersController extends AbstractController
      */
 
     //consists in creating a coach    
-    public function addcustomers(EntityManagerInterface $entityManager, Request $request): Response
+    public function addcustomers(EntityManagerInterface $entityManager, Request $request, TranslatorInterface $traslator): Response
     {
         $customer = new Customers();
        
@@ -45,7 +45,9 @@ class CustomersController extends AbstractController
 
             $entityManager->persist($customer);
             $entityManager->flush();
-            $this->addFlash('success', 'Your email address has been verified.');
+            
+            $message = $traslator->trans('Your email address has been verified.');
+            $this->addFlash('success', $message);
             return $this->redirectToRoute('app_home');
         }
 

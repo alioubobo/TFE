@@ -9,15 +9,14 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
-
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ContactController extends AbstractController
 {
     /**
      * @Route("/contact", name="app_contact")
      */
-    public function contact(Request $request, MailerInterface $mailer): Response
+    public function contact(Request $request, MailerInterface $mailer, TranslatorInterface $translator): Response
     {
         $form = $this->createForm(ContactType::class);
 
@@ -37,7 +36,8 @@ class ContactController extends AbstractController
 
             $mailer->send($email);
 
-            $this->addFlash('success', 'Votre message a bien été envoyé');
+            $message = $translator->trans('Your message has been sent');
+            $this->addFlash('success', $message);
             
             return $this->redirectToRoute('app_home');            
         }

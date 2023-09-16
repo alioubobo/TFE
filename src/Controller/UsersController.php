@@ -13,6 +13,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class UsersController extends AbstractController
 {
@@ -31,14 +32,13 @@ class UsersController extends AbstractController
             return $this->render('users/adminprofile.html.twig');
         }        
 
-        return $this->render('users/_userprofile.html.twig');
-        
+        return $this->render('users/_userprofile.html.twig');        
     }
 
     /**
      * @Route("/users/profile/edit", name="users_edit_profile")
      */
-    public function editProfile(EntityManagerInterface $entityManager,Request $request): Response
+    public function editProfile(EntityManagerInterface $entityManager,Request $request, TranslatorInterface $translator): Response
     {
         $user = $this->getUser();
         
@@ -49,7 +49,8 @@ class UsersController extends AbstractController
            
             $entityManager->persist($user);
             $entityManager->flush();
-            $this->addFlash('success', 'Your profile has been edited.');
+            $message = $translator->trans('Your profile has been edited.');
+            $this->addFlash('success', $message);
 
             return $this->redirectToRoute('app_users');
         }
@@ -72,7 +73,7 @@ class UsersController extends AbstractController
     /**
      * @Route("/users/password/edit", name="users_edit_password")
      */
-    public function editPassword(EntityManagerInterface $entityManager, Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function editPassword(EntityManagerInterface $entityManager, Request $request, UserPasswordEncoderInterface $passwordEncoder, TranslatorInterface $translator): Response
     {
         $session = $request->getSession();
        
@@ -84,11 +85,13 @@ class UsersController extends AbstractController
             if($request->request->get('pass') == $request->request->get('pass2')){
                 $user->setPassword($passwordEncoder->encodePassword($user, $request->request->get('pass')));
                 $entityManager->flush();
-                $this->addFlash('success', 'the passwors updated.');
+                $message = $translator->trans('the passwors updated.');
+                $this->addFlash('success', $message);
 
                 return $this->redirectToRoute('app_users');
             }else{
-                $this->addFlash('error', 'the passwors are diffirent.');
+                $message = $translator->trans('the passwors are diffirent.');
+                $this->addFlash('error', $message);
             }
         }        
 

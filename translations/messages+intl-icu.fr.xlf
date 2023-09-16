@@ -147,6 +147,228 @@
                 accord avec soi-même.
         </target>
       </trans-unit>
+      <trans-unit id="kQWnsB7" resname="Your email address has been verified.">
+        <source>Your email address has been verified.</source>
+        <target>Votre adresse email a été vérifiée.</target>
+      </trans-unit>
+      <trans-unit id="RnJ.iuh" resname="Your profile has been edited.">
+        <source>Your profile has been edited.</source>
+        <target>Votre profil a été modifié.</target>
+      </trans-unit>
+      <trans-unit id="8pXsYgb" resname="the passwors updated.">
+        <source>the passwors updated.</source>
+        <target>Les mots de passe sont mis à jour.</target>
+      </trans-unit>
+      <trans-unit id="IoGvKTb" resname="the passwors are diffirent.">
+        <source>the passwors are diffirent.</source>
+        <target>Les mots de passe sont différents.</target>
+      </trans-unit>
+      <trans-unit id="TTbtqfm" resname="Your message has been sent">
+        <source>Your message has been sent</source>
+        <target>Votre message a bien été envoyé</target>
+      </trans-unit>
+      <trans-unit id="r8AVHAX" resname="Passwords are not identical.">
+        <source>Passwords are not identical.</source>
+        <target>Les mots de passe ne sont pas identiques.</target>
+      </trans-unit>
+      <trans-unit id="7ovrv1C" resname="Oops there is no correspondent.">
+        <source>Oops there is no correspondent.</source>
+        <target>Oups, il n'y a pas de correspondant.</target>
+      </trans-unit>
+      <trans-unit id="SWtMYIv" resname="Contactez-nous">
+        <source>Contactez-nous</source>
+        <target>Contactez-nous</target>
+      </trans-unit>
+      <trans-unit id="q0Uca0i" resname="Mon profil">
+        <source>Mon profil</source>
+        <target>Mon profil</target>
+      </trans-unit>
+      <trans-unit id="9PQbNq3" resname="Page d'erreur">
+        <source>Page d'erreur</source>
+        <target>Page d'erreur</target>
+      </trans-unit>
+      <trans-unit id="19JC.uc" resname="Choice register">
+        <source>Choice register</source>
+        <target>Choix d'enregistrement </target>
+      </trans-unit>
+      <trans-unit id="SwtwzpU" resname="Complete your information according to your status">
+        <source>Complete your information according to your status</source>
+        <target>Complétez vos informations en fonction de votre statut</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>Enregistrer</target>
+      </trans-unit>
+      <trans-unit id="_TJnqhH" resname="Remember me">
+        <source>Remember me</source>
+        <target>Souvenez-vous de moi</target>
+      </trans-unit>
+      <trans-unit id="r9Jf3xf" resname="Forgot your password?">
+        <source>Forgot your password?</source>
+        <target>Vous avez oublié votre mot de passe ?</target>
+      </trans-unit>
+      <trans-unit id="QqMn_t9" resname="Pay Now">
+        <source>Pay Now</source>
+        <target>Payer maintenant</target>
+      </trans-unit>
+      <trans-unit id="XYxxq8U" resname="About Us">
+        <source>About Us</source>
+        <target>A propos de nous</target>
+      </trans-unit>
+      <trans-unit id="S0LGaQ6" resname="Administration">
+        <source>Administration</source>
+        <target>Administration</target>
+      </trans-unit>
+      <trans-unit id="EgWE7rJ" resname="Welcome to your site administration interface!">
+        <source>Welcome to your site administration interface!</source>
+        <target>Bienvenue dans l'interface d'administration de votre site !</target>
+      </trans-unit>
+      <trans-unit id="Fa268ph" resname="Add Coaches">
+        <source>Add Coaches</source>
+        <target>Ajouter des coachs</target>
+      </trans-unit>
+      <trans-unit id="1Mx.1Hn" resname="Detail coach">
+        <source>Detail coach</source>
+        <target>Détail du Coach </target>
+      </trans-unit>
+      <trans-unit id="UzFhc1Y" resname="Accueil">
+        <source>Accueil</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="78O2gk6" resname="Getting to know yourself">
+        <source>Getting to know yourself</source>
+        <target>Aller à la rencontre de soi-même</target>
+      </trans-unit>
+      <trans-unit id="SeYuiPG" resname="Meditation helps you to focus on yourself">
+        <source>Meditation helps you to focus on yourself</source>
+        <target>La méditation vous aide à vous concentrer sur vous-même</target>
+      </trans-unit>
+      <trans-unit id="SMu600K" resname="The light at the end of the tunnel">
+        <source>The light at the end of the tunnel</source>
+        <target>La lumière se trouve au bout du tunnel</target>
+      </trans-unit>
+      <trans-unit id="pXsIpIC" resname="Previous">
+        <source>Previous</source>
+        <target>Précédent</target>
+      </trans-unit>
+      <trans-unit id="H.V6Kdf" resname="Next">
+        <source>Next</source>
+        <target>Prochaine</target>
+      </trans-unit>
+      <trans-unit id="5rdFbAm" resname="Coach">
+        <source>Coach</source>
+        <target>Coach</target>
+      </trans-unit>
+      <trans-unit id="vzdjODq" resname="Customer">
+        <source>Customer</source>
+        <target>Client</target>
+      </trans-unit>
+      <trans-unit id="U28cTzJ" resname="Password Reset Email Sent">
+        <source>Password Reset Email Sent</source>
+        <target>Email de réinitialisation du mot de passe envoyé</target>
+      </trans-unit>
+      <trans-unit id="FmrMHS6" resname="If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password.">
+        <source>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password.</source>
+        <target>Si un compte correspondant à votre adresse e-mail existe, un e-mail contenant un lien que vous pouvez utiliser pour réinitialiser votre mot de passe vient d'être envoyé.</target>
+      </trans-unit>
+      <trans-unit id="bs9avOq" resname="If you don't receive an email please check your spam folder or">
+        <source>If you don't receive an email please check your spam folder or</source>
+        <target>Si vous ne recevez pas d'e-mail, veuillez vérifier votre dossier de courrier indésirable (spam) ou votre adresse e-mail.</target>
+      </trans-unit>
+      <trans-unit id="vQH5j0c" resname="To reset your password, please visit the following link">
+        <source>To reset your password, please visit the following link</source>
+        <target>Pour réinitialiser votre mot de passe, veuillez consulter le lien suivant</target>
+      </trans-unit>
+      <trans-unit id="87wG9uu" resname="This link will expire in">
+        <source>This link will expire in</source>
+        <target>Ce lien expirera dans</target>
+      </trans-unit>
+      <trans-unit id="F7WctIl" resname="Cheers!">
+        <source>Cheers!</source>
+        <target>Bravo !</target>
+      </trans-unit>
+      <trans-unit id="WfpDeb4" resname="Reset your password">
+        <source>Reset your password</source>
+        <target>Réinitialisez votre mot de passe</target>
+      </trans-unit>
+      <trans-unit id="woTj8wg" resname="Enter your email address and we will send you a&#10;                    link to reset your password.">
+        <source>Enter your email address and we will send you a
+                    link to reset your password.</source>
+        <target>Entrez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.
+                    lien pour réinitialiser votre mot de passe.</target>
+      </trans-unit>
+      <trans-unit id="y2XxXvP" resname="Send password reset email">
+        <source>Send password reset email</source>
+        <target>Envoyer un courriel de réinitialisation du mot de passe</target>
+      </trans-unit>
+      <trans-unit id="4O3_s6c" resname="Reset password">
+        <source>Reset password</source>
+        <target>Réinitialisation du mot de passe</target>
+      </trans-unit>
+      <trans-unit id="L7SrYuj" resname="Add Trainings">
+        <source>Add Trainings</source>
+        <target>Ajouter des formations</target>
+      </trans-unit>
+      <trans-unit id="V6JVu26" resname="Description formation">
+        <source>Description formation</source>
+        <target>Description de la formation</target>
+      </trans-unit>
+      <trans-unit id="JoPK1Io" resname="Name:">
+        <source>Name:</source>
+        <target>Nom:</target>
+      </trans-unit>
+      <trans-unit id="DPKBRgS" resname="Description:">
+        <source>Description:</source>
+        <target>Description:</target>
+      </trans-unit>
+      <trans-unit id="v8id2CK" resname="Price:">
+        <source>Price:</source>
+        <target>Prix:</target>
+      </trans-unit>
+      <trans-unit id="Ti0iWlE" resname="Coach:">
+        <source>Coach:</source>
+        <target>Coach:</target>
+      </trans-unit>
+      <trans-unit id="ZIztra7" resname="Profil de">
+        <source>Profil de</source>
+        <target>Profil de</target>
+      </trans-unit>
+      <trans-unit id="8Tpkui." resname="Full name">
+        <source>Full name</source>
+        <target>Nom complet</target>
+      </trans-unit>
+      <trans-unit id="CG9UULI" resname="Edit my profile">
+        <source>Edit my profile</source>
+        <target>Modifier mon profil</target>
+      </trans-unit>
+      <trans-unit id="H4msCWa" resname="Edit my password">
+        <source>Edit my password</source>
+        <target>Modifier mon mot de passe</target>
+      </trans-unit>
+      <trans-unit id=".sKsD0z" resname="Edit Profile">
+        <source>Edit Profile</source>
+        <target>Modifier le profil</target>
+      </trans-unit>
+      <trans-unit id="Jxxi_i3" resname="My profile">
+        <source>My profile</source>
+        <target>Mon profil</target>
+      </trans-unit>
+      <trans-unit id="FcSqEwN" resname="Edit profile">
+        <source>Edit profile</source>
+        <target>Modifier le profi</target>
+      </trans-unit>
+      <trans-unit id="PcD8cUX" resname="Edit Password">
+        <source>Edit Password</source>
+        <target>Modifier le mot de passe</target>
+      </trans-unit>
+      <trans-unit id="nJ7X5Sm" resname="confirm password">
+        <source>confirm password</source>
+        <target>Confirmer le mot de passe</target>
+      </trans-unit>
+      <trans-unit id="Yx1zvoA" resname="Contact-us">
+        <source>Contact-us</source>
+        <target>Contactez-nous</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

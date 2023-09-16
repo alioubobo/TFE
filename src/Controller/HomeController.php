@@ -18,7 +18,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig');
     }
 
-    //Le changement d'une langue à une autre
+    //Changing from one language to another
     /**
      * @Route("/change_locale/{locale}", name="change_locale")
      */

@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
-{% block title %}{% trans %}Page d'erreur{% endtrans %}{% endblock %}
+{% block title %}{% trans %}Error page{% endtrans %}{% endblock %}
 
 {% block body %}       
     <div class="container ">
         <div class="page-error">
             <div class="text-center">
                 <div class="">
-                    <h1 class=" text-primary">HTTP Error {{ exception.statusCode }}</h1>
+                    <h1 class=" text-primary">HTTP Error {{ exception.statusCode }}{% endtrans %}</h1>
                     <p class="">{{ exception.statusText }}</p>                  
-                    <p >Oops! you're not in the right place!</p>
-                    <a href={{path('app_home')}}  class="rtr-accueil text-decoration-none">Return to the home page></a> 
+                    <p >{% trans %}Oops! you're not in the right place!{% endtrans %}</p>
+                    <a href={{path('app_home')}}  class="rtr-accueil text-decoration-none">{% trans %}Return to the home page>{% endtrans %}</a> 
                 </div>
             </div>
         </div>

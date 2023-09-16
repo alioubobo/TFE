@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Description formation{% endblock %}
+{% block title %}{% trans %}Description formation{% endtrans %}{% endblock %}
 
 {% block body %}
 <div class="container">  
@@ -13,15 +13,14 @@
             {% endfor %}  
         </div>
         <div>
-            <p>Name: {{training.name}}</p>
-            <p>Description: {{training.description}}</p>  
-            <p>Price: {{training.price}}</p> 
+            <p>{% trans %}Name: {% endtrans %}{{training.name}}</p>
+            <p>{% trans %}Description:{% endtrans %} {{training.description}}</p>  
+            <p>{% trans %}Price: {% endtrans %}{{training.price}}</p> 
             {% for coach in training.coache %}
-                <p>Coach: {{coach.name}}</p>
+                <p>{% trans %}Coach: {% endtrans %}{{coach.name}}</p>
             {% endfor %}
             {% if app.user %}
-                <div >
-                    <h2>{% trans %}Proceseder au paiement{% endtrans %}</h2> 
+                <div >                    
                     <form class="d-flex" action={{path('app_checkout')}} method="Post">        
                             <div class="form-group ">                            
                                 <input type="hidden"  name="price" class="form-control" value={{training.price}} /> 

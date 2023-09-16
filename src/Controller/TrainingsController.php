@@ -21,7 +21,7 @@ class TrainingsController extends AbstractController
     /**
      * @Route("/addtrainings", name="add_trainings")
      * consists of securing the route
-     * @Security("is_granted('ROLE_CAOCH')")      
+     * @Security("is_granted('ROLE_ADMIN')")      
     */
     
     public function addtrainigs(EntityManagerInterface $entityManager, Request $request): Response

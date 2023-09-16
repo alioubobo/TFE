@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class CoachesController extends AbstractController
 {
@@ -21,7 +22,7 @@ class CoachesController extends AbstractController
      * @Security("is_granted('ROLE_ADMIN')")    
      */ 
     //consists in creating a coach
-    public function addCoaches(EntityManagerInterface $entityManager, Request $request): Response
+    public function addCoaches(EntityManagerInterface $entityManager, Request $request, TranslatorInterface $translator): Response
     {
         $coach = new Coaches();
        
@@ -43,7 +44,9 @@ class CoachesController extends AbstractController
 
             $entityManager->persist($coach);
             $entityManager->flush();
-            $this->addFlash('success', 'Your email address has been verified.');
+
+            $message = $translator->trans('Your email address has been verified.');
+            $this->addFlash('success', $message);
             return $this->redirectToRoute('app_home');
         }
 

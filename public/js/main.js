@@ -21,10 +21,10 @@ $(function () {
     },
     messages: {
       email: {
-        required: "Entrez une adresse email valide",
+        required: "Enter a valid email address",
       },
       password: {
-        required: "Entrez votre mot de passe",
+        required: "Enter your password",
       },
     },
     submitHandler: function (form) {

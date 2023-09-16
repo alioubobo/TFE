@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Detail coach{% endblock %}
+{% block title %}{% trans %}Detail coach{% endtrans %}{% endblock %}
 
 {% block body %}
 <div class="container">
@@ -11,9 +11,10 @@
         <div class=" ">
             <h4>Coach: {{coach.name}}</h4>  
             <h4>Description: {{coach.description}}</h4> 
-            <h4>Site web: {{coach.getSocialNetworkingLink}}</4>                 
-            {% for training in coach.trainings %}
-                <h4>Formation: <a class="text-decoration-none" href={{path('show_training', {id:training.id})}}>{{training.name}}</a></h4>
+            <h4>Site web: {{coach.getSocialNetworkingLink}}</4> 
+             <h4>Formation: </h4>                
+            {% for training in coach.trainings %}           
+                <p>=> <a class="text-decoration-none" href={{path('show_training', {id:training.id})}}>{{training.name}}</a></p>
             {% endfor %}             
         </div>       
     </div>   

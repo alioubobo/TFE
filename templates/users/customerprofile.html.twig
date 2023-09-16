@@ -1,11 +1,10 @@
 {% extends 'users.html.twig' %}
 
-{% block title %}Profil de {{app.user.customer.name}}{% endblock %}
+{% block title %}{% trans %}Profil de {% endtrans %}{{app.user.customer.name}}{% endblock %}
 
 {% block body %}
 <div class="container">
-    <div class="row">
-        {# colonne du photo#}
+    <div class="row">      
         <div class="col-md-4 mt-1">
             <div class="card bg-dark text-center sidebar">
                 <div class="card-body">
@@ -15,15 +14,14 @@
                     </div>
                 </div> 
             </div> 
-        </div>
-        {# colonne des infos#}
+        </div>      
         <div class="col-md-8 mt-1">
             <div class="card mb-3 content">
                 <h1>{{app.user.customer.name}}'s profile </h1>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-3">
-                            <h3>Full name</h3>
+                            <h3>{% trans %}Full name{% endtrans %}</h3>
                         </div>
                         <div class="col-md-9 ">
                             {{app.user.customer.name}}
@@ -32,15 +30,15 @@
                                   
                     <div class="row">
                         <div class="col-md-3">
-                            <h3>Email</h3>
+                            <h3>{% trans %}Email{% endtrans %}</h3>
                         </div>
                         <div class="col-md-9 ">
                             {{app.user.email}}
                         </div>
                     </div>
                     <div class="btn-group">                        
-                        <button type="button" class="btn btn-sm btn-outline-secondary"><a class="text-decoration-none" href={{path('users_edit_profile')}}>Edit my profile</a></button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary"><a class="text-decoration-none" href={{path('users_edit_password')}}>Edit my password</a></button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><a class="text-decoration-none" href={{path('users_edit_profile')}}>{% trans %}Edit my profile{% endtrans %}</a></button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><a class="text-decoration-none" href={{path('users_edit_password')}}>{% trans %}Edit my password{% endtrans %}</a></button>
                     </div>
                     <hr>
                 </div>

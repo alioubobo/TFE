@@ -47,9 +47,8 @@ class SearchController extends AbstractController
         
          //check if the variable is empty to display a message
         if(empty($coaches)){
-            $message = $translator->trans('No results for this item!');
-            // $this->addFlash("pasdecoach", $message);
-            $this->addFlash('info', "Oops there is no correspondent.");
+            $message = $translator->trans("Oops there is no correspondent.");
+            $this->addFlash("info", $message);            
         }
         
         //pagination

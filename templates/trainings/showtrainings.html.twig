@@ -1,7 +1,7 @@
 
 {% extends 'base.html.twig' %}
 
-{% block title %}Formations{% endblock %}
+{% block title %}{% trans %}Formations{% endtrans %}{% endblock %}
 
 {% block body %}
 {{ render(path('search_coaches')) }}
