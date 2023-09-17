@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% trans %}Paiement réussi{% endtrans %}{% endblock %}
+{% block title %}{% trans %}Successful payment{% endtrans %}{% endblock %}
 
 {% block body %}
 <div class="container">
-    <h1 class="text-center">{% trans %}Bonjour Monsieur, Madame {{name}},{% endtrans %}</h1>
-    <p class="text-center">{% trans %}Nous vous remercions pour votre achat et vous souhaitons une bonne lecture{% endtrans %}</p>
-    <p class="text-center">{% trans %}On mettra à votre disposition les differentes vidéos de la formation ici{% endtrans %}<p/>
-    <h2 class="text-center">{% trans %}Nous vous mettons ci-dessous une suggestion des plus recentes formations{% endtrans %}</h2>
+    <h1 class="text-center">{% trans %}Dear Sir or Madam{% endtrans %} {{name}},</h1>
+    <p class="text-center">{% trans %}We thank you for your purchase and hope you enjoy your reading.{% endtrans %}</p>
+    <p class="text-center">{% trans %}You can watch the various training videos here{% endtrans %}<p/>
+    <h2 class="text-center">{% trans %}Below is a selection of the most recent training courses.{% endtrans %}</h2>
     {{ render(path('last_trainings')) }}   
 
 </div>

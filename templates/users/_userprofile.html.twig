@@ -18,7 +18,7 @@
         </div>      
         <div class="col-md-8 mt-1">
             <div class="card mb-3 content">
-                <h1> {{app.user.coach.name}}'s profile </h1>
+                <h1>{% trans %}profile of {% endtrans %}{{app.user.coach.name}}</h1>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-3">
@@ -38,20 +38,17 @@
                         </div>
                     </div>
                     <div class="btn-group">                        
-                        <button type="button" class="btn btn-primary btn-sm btn-outline-secondary"><a class="text-decoration-none text-white" href={{path('users_edit_profile')}}>Modifier mon profil{% endtrans %}</a></button>
-                        <button type="button" class="btn btn-primary btn-sm btn-outline-secondary"><a class="text-decoration-none text-white" href={{path('users_edit_password')}}>Modifier mon mot de passe{% endtrans %}</a></button>
+                        <button type="button" class="btn btn-primary btn-sm btn-outline-secondary"><a class="text-decoration-none text-white" href={{path('users_edit_profile')}}>{% trans %}Edit my profile{% endtrans %}</a></button>
+                        <button type="button" class="btn btn-primary btn-sm btn-outline-secondary"><a class="text-decoration-none text-white" href={{path('users_edit_password')}}>{% trans %}Edit Password{% endtrans %}</a></button>
                     </div>
                     <hr>
                 </div>
             </div>
             <div class="card mb-3 content">
-                <h1>{% trans %}Les formations de{% endtrans %} {{app.user.coach.name}} ({{app.user.coach.trainings|length}})</h1>
+                <h1>{% trans %}The training courses of{% endtrans %} {{app.user.coach.name}} ({{app.user.coach.trainings|length}})</h1>
                 <div class="card-body">
                     {% for training in app.user.coach.trainings %}
-                    <div class="row">
-                        <div class="col-md-3">
-                            <h3>{% trans %}Training: {% endtrans %}</h3>
-                        </div>
+                    <div class="row">                        
                         <div class="col-md-9 ">
                             <a class="text-decoration-none "  href={{path('show_training', {id:training.id})}}>{{training.name}}</a>
                         </div>

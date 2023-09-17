@@ -355,7 +355,7 @@
       </trans-unit>
       <trans-unit id="FcSqEwN" resname="Edit profile">
         <source>Edit profile</source>
-        <target>Modifier le profi</target>
+        <target>Modifier le profil </target>
       </trans-unit>
       <trans-unit id="PcD8cUX" resname="Edit Password">
         <source>Edit Password</source>
@@ -368,6 +368,46 @@
       <trans-unit id="Yx1zvoA" resname="Contact-us">
         <source>Contact-us</source>
         <target>Contactez-nous</target>
+      </trans-unit>
+      <trans-unit id="a7v2JDw" resname="Successful payment">
+        <source>Successful payment</source>
+        <target>Paiement réussi</target>
+      </trans-unit>
+      <trans-unit id="e8FwmrZ" resname="Dear Sir or Madam">
+        <source>Dear Sir or Madam</source>
+        <target>Bonjour Madame, Monsieur,</target>
+      </trans-unit>
+      <trans-unit id="v2yIpLy" resname="We thank you for your purchase and hope you enjoy your reading.">
+        <source>We thank you for your purchase and hope you enjoy your reading.</source>
+        <target>Nous vous remercions pour votre achat et vous souhaitons une bonne lecture</target>
+      </trans-unit>
+      <trans-unit id="mQ2PQmK" resname="You can watch the various training videos here">
+        <source>You can watch the various training videos here</source>
+        <target>On mettra à votre disposition les differentes vidéos de la formation ici_You can watch the various training videos here</target>
+      </trans-unit>
+      <trans-unit id="ysu9_l9" resname="Below is a selection of the most recent training courses.">
+        <source>Below is a selection of the most recent training courses.</source>
+        <target>Nous vous mettons ci-dessous une suggestion des plus recentes formations</target>
+      </trans-unit>
+      <trans-unit id="o1xgyK0" resname="The training courses of">
+        <source>The training courses of</source>
+        <target>Les formations de</target>
+      </trans-unit>
+      <trans-unit id="GQDqtsA" resname="profile">
+        <source>profile</source>
+        <target>profil</target>
+      </trans-unit>
+      <trans-unit id="DzVWenS" resname="Modifier mon profil">
+        <source>Modifier mon profil</source>
+        <target>Modifier mon profil</target>
+      </trans-unit>
+      <trans-unit id="nKRkbF." resname="Modifier mon mot de passe">
+        <source>Modifier mon mot de passe</source>
+        <target>Modifier le mot de passe</target>
+      </trans-unit>
+      <trans-unit id="DMLVtNb" resname="profile of">
+        <source>profile of</source>
+        <target>profil de </target>
       </trans-unit>
     </body>
   </file>

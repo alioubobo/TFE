@@ -6,7 +6,7 @@ $(function () {
   $(".navbar-toggler").css("background-color", "white");
 
   //Body
-  //***Validation des formulaires
+  //***Form validation
   $("form").attr("id", "form");
   //Connexion, inscription, contact
   $("#form").validate({
