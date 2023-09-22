@@ -19,9 +19,7 @@ use Stripe\StripeClient;
 class TrainingsController extends AbstractController
 {
     /**
-     * @Route("/addtrainings", name="add_trainings")
-     * consists of securing the route
-     * @Security("is_granted('ROLE_ADMIN')")      
+     * @Route("/addtrainings", name="add_trainings")           
     */
     
     public function addtrainigs(EntityManagerInterface $entityManager, Request $request): Response
@@ -125,7 +123,6 @@ class TrainingsController extends AbstractController
         return $this->render('trainings/_forwardtraining.html.twig', [
             'forwardtraining' => $forward_training,
         ]);
-    }
-    
+    }   
 
 }

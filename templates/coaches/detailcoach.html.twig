@@ -9,10 +9,10 @@
             <img class="card-img-bottom" src="{{ asset('/uploads/coaches/'~coach.image)|imagine_filter('carre') }}" alt="{{coach.name}}" >
         </div>   
         <div class=" ">
-            <h4>Coach: {{coach.name}}</h4>  
-            <h4>Description: {{coach.description}}</h4> 
-            <h4>Site web: {{coach.getSocialNetworkingLink}}</4> 
-             <h4>Formation: </h4>                
+            <h4>{% trans %}Coach:{% endtrans %} {{coach.name}}</h4>  
+            <h4>{% trans %}Description:{% endtrans %} {{coach.description}}</h4> 
+            <h4>{% trans %}Social network:{% endtrans %} {{coach.getSocialNetworkingLink}}</4> 
+             <h4>{% trans %}training{% endtrans %}: </h4>                
             {% for training in coach.trainings %}           
                 <p>=> <a class="text-decoration-none" href={{path('show_training', {id:training.id})}}>{{training.name}}</a></p>
             {% endfor %}             

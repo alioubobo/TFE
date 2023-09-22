@@ -8,6 +8,10 @@
     <p class="text-center">{% trans %}We thank you for your purchase and hope you enjoy your reading.{% endtrans %}</p>
     <p class="text-center">{% trans %}You can watch the various training videos here{% endtrans %}<p/>
     <h2 class="text-center">{% trans %}Below is a selection of the most recent training courses.{% endtrans %}</h2>
+    <div class="">
+    <button id="paiement-reussi" class="btn btn-primary "  type="submit">{% trans %}click here{% endtrans %}</button>
+    <div id="paiementreussi"></div>
+</div>
     {{ render(path('last_trainings')) }}   
 
 </div>

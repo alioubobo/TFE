@@ -15,13 +15,9 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class CustomersController extends AbstractController
 {
-    /**
-     * 
-     * @Route("/customers", name="add_customers")
-     * consists of securing the route 
-     * @Security("is_granted('ROLE_ADMIN')")    
+    /**    
+     * @Route("/customers", name="add_customers")        
      */
-
     //consists in creating a coach    
     public function addcustomers(EntityManagerInterface $entityManager, Request $request, TranslatorInterface $traslator): Response
     {

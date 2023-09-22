@@ -19,6 +19,11 @@
             {% for coach in training.coache %}
                 <p>{% trans %}Coach: {% endtrans %}{{coach.name}}</p>
             {% endfor %}
+            <div class="">
+                <button id="invit-paiement" class="btn btn-primary "  type="submit">{% trans %}Passer à l'action!{% endtrans %}</button>
+                <div id="invitpaiement"></div>
+            </div>
+
             {% if app.user %}
                 <div >                    
                     <form class="d-flex" action={{path('app_checkout')}} method="Post">        

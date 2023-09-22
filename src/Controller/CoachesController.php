@@ -17,10 +17,8 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class CoachesController extends AbstractController
 {
     /**
-     * @Route("/addcoaches", name="add_coaches")
-     * consists of securing the route
-     * @Security("is_granted('ROLE_ADMIN')")    
-     */ 
+     * @Route("/addcoaches", name="add_coaches")         
+     */     
     //consists in creating a coach
     public function addCoaches(EntityManagerInterface $entityManager, Request $request, TranslatorInterface $translator): Response
     {

@@ -1,6 +1,7 @@
 $(function () {
   //Tout a été chargé!
   console.log("Dom chargé! ");
+  console.log("test ajax");
 
   //Header
   $(".navbar-toggler").css("background-color", "white");

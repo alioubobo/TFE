@@ -26,13 +26,9 @@ class UsersController extends AbstractController
         //check the user's role to direct them to the correct template
         if(in_array('COACH', $user->getRoles())){
             return $this->render('users/coachprofile.html.twig');
-        }else if(in_array('CUSTOMER', $user->getRoles())){
+        }else {
             return $this->render('users/customerprofile.html.twig');
-        }else if(in_array('ADMIN', $user->getRoles())){
-            return $this->render('users/adminprofile.html.twig');
-        }        
-
-        return $this->render('users/_userprofile.html.twig');        
+        }                       
     }
 
     /**
@@ -59,15 +55,11 @@ class UsersController extends AbstractController
              return $this->renderForm('users/editcoachprofile.html.twig', [
                 'form' => $form,
             ]);
-        }else if(in_array('CUSTOMER', $user->getRoles())){
+        }else {
             return $this->renderForm('users/editcustomerprofile.html.twig', [
                 'form' => $form,
             ]);
-        }
-
-        return $this->renderForm('users/editcustomerprofile.html.twig', [
-            'form' => $form,
-        ]);
+        }       
     }
 
     /**
@@ -75,8 +67,7 @@ class UsersController extends AbstractController
      */
     public function editPassword(EntityManagerInterface $entityManager, Request $request, UserPasswordEncoderInterface $passwordEncoder, TranslatorInterface $translator): Response
     {
-        $session = $request->getSession();
-       
+        $session = $request->getSession();       
 
         if($request->isMethod('Post')){
 

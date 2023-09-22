@@ -19,7 +19,7 @@ class CoachesType extends AbstractType
             ->add('first_name', TextareaType::class)
             ->add('description', TextareaType::class)
             ->add('social_networking_link', TextareaType::class)
-            ->add('users', TextareaType::class)
+            // ->add('users', TextareaType::class)
             ->add('images', FileType::class,[
                 'label' => 'Image',
                 'multiple' => false,

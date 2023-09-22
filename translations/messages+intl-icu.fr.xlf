@@ -359,7 +359,7 @@
       </trans-unit>
       <trans-unit id="PcD8cUX" resname="Edit Password">
         <source>Edit Password</source>
-        <target>Modifier le mot de passe</target>
+        <target>Modifier le mot de passe de </target>
       </trans-unit>
       <trans-unit id="nJ7X5Sm" resname="confirm password">
         <source>confirm password</source>
@@ -383,7 +383,7 @@
       </trans-unit>
       <trans-unit id="mQ2PQmK" resname="You can watch the various training videos here">
         <source>You can watch the various training videos here</source>
-        <target>On mettra à votre disposition les differentes vidéos de la formation ici_You can watch the various training videos here</target>
+        <target>On mettra à votre disposition les differentes vidéos de la formation ici</target>
       </trans-unit>
       <trans-unit id="ysu9_l9" resname="Below is a selection of the most recent training courses.">
         <source>Below is a selection of the most recent training courses.</source>
@@ -403,11 +403,31 @@
       </trans-unit>
       <trans-unit id="nKRkbF." resname="Modifier mon mot de passe">
         <source>Modifier mon mot de passe</source>
-        <target>Modifier le mot de passe</target>
+        <target>Modifier le mot de passe de </target>
       </trans-unit>
       <trans-unit id="DMLVtNb" resname="profile of">
         <source>profile of</source>
         <target>profil de </target>
+      </trans-unit>
+      <trans-unit id="Belc0ER" resname="Social network:">
+        <source>Social network:</source>
+        <target>Reseau social:</target>
+      </trans-unit>
+      <trans-unit id="vSTb9IR" resname="Hi! Please confirm your email!">
+        <source>Hi! Please confirm your email!</source>
+        <target>Bonjour! confirmez votre email s'il vous plaît</target>
+      </trans-unit>
+      <trans-unit id="Ry3Xo6w" resname="Please confirm your email address by clicking the following link:">
+        <source>Please confirm your email address by clicking the following link:</source>
+        <target>Veuillez confirmer votre adresse électronique en cliquant sur le lien suivant :</target>
+      </trans-unit>
+      <trans-unit id="ITaQX9q" resname="Confirm my Email">
+        <source>Confirm my Email</source>
+        <target>Confirmer mon Email</target>
+      </trans-unit>
+      <trans-unit id="FC1pgYJ" resname="Add a training">
+        <source>Add a training</source>
+        <target>Ajouter une formation</target>
       </trans-unit>
     </body>
   </file>
