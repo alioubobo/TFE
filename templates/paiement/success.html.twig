@@ -1,19 +1,15 @@
-{% extends 'base.html.twig' %}
+{% trans %}Successful payment{% endtrans %}
 
-{% block title %}{% trans %}Successful payment{% endtrans %}{% endblock %}
-
-{% block body %}
 <div class="container">
     <h1 class="text-center">{% trans %}Dear Sir or Madam{% endtrans %} {{name}},</h1>
-    <p class="text-center">{% trans %}We thank you for your purchase and hope you enjoy your reading.{% endtrans %}</p>
-    <p class="text-center">{% trans %}You can watch the various training videos here{% endtrans %}<p/>
-    <h2 class="text-center">{% trans %}Below is a selection of the most recent training courses.{% endtrans %}</h2>
-    <div class="">
-    <button id="paiement-reussi" class="btn btn-primary "  type="submit">{% trans %}click here{% endtrans %}</button>
-    <div id="paiementreussi"></div>
-</div>
+    <h3 class="text-center">{% trans %}Thank you for your order ! {% endtrans %} </h3>
+    <h3 class="text-center">{% trans %}Total amount : {% endtrans %} {{amount}}€.</h3>
+    <h3 class="text-center">{% trans %}Type of payment : {% endtrans %} {{paiment_type}}.</h3>
+    <h3 class="text-center">{% trans %} The date of payment : {% endtrans %} {{ buy_date|date('d-m-Y')}}. </h3>
+    <h3 class="text-center">{% trans %}Below is a selection of the most recent training courses.{% endtrans %}</h3>
+      
     {{ render(path('last_trainings')) }}   
 
 </div>
 
-{% endblock %}
+

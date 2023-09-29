@@ -1,7 +1,7 @@
-<header class"">
+<header>
   <nav class="navbar navbar-expand-lg bg-dark">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none" href={{path('app_home')}}><img class="logo" src="{{ asset('/uploads/logo/logo-ars-v1.svg') }}" alt="Logo du site" width="150px" height="75px"></a>
+      <a class="navbar-brand d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none" href={{path('app_home')}}><img class="logo" src="{{ asset('/uploads/logo/logo-ars-v1.svg') }}" alt="Logo du site" width="150" height="75"></a>
       <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation" >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,7 +25,7 @@
           <li class="nav-item">
             {% for locale in locales %}
                 {% if locale != app.request.locale %}
-                    <a class="nav-link text-white" href="{{ path('change_locale', {'locale': locale}) }}"><img src="{{ asset('/uploads/images/'~locale~'.png') }}" alt"{{ locale }}" width="50px" height="30px"> </a>
+                    <a class="nav-link text-white" href="{{ path('change_locale', {'locale': locale}) }}"><img src="{{ asset('/uploads/images/'~locale~'.png') }}" alt"{{ locale }}" width="50" height="30"> </a>
                 {% endif %}
             {% endfor %}            
           </li>    
@@ -33,7 +33,7 @@
         <div class="col-md-3 text-end">
           {% if app.user %}
             <button type="button" class="btn btn-outline-primary me-2"><a class="nav-link" href={{path('app_logout')}}>{% trans %}Logout{% endtrans %}</a></button>
-            <button type="button" class="btn btn-primary"><a class="nav-link" href={{path('app_users')}}>{% trans %}Mon profil{% endtrans %}</a></button>
+            <button type="button" class="btn btn-primary"><a class="nav-link" href={{path('app_users')}}>{% trans %}My profile{% endtrans %}</a></button>
           {% else %}  
             <button type="button" class="btn btn-outline-primary me-2"><a class="nav-link" href={{path('app_login')}}>{% trans %}Connexion{% endtrans %}</a></button>
             <button type="button" class="btn btn-primary"><a class="nav-link" href={{path('app_register')}}>{% trans %}Registration{% endtrans %}</a></button>

@@ -2,14 +2,16 @@
 
 namespace App\Controller;
 
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Stripe\StripeClient;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Trainings;
-use App\Repository\TrainingsRepository;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class PaiementController extends AbstractController
 {
@@ -24,7 +26,7 @@ class PaiementController extends AbstractController
     /**
      * @Route("/checkout", name="app_checkout", methods={"POST", "GET"})
     */
-    public function checkout(EntityManagerInterface $manager, Request $request): Response
+    public function checkout(Request $request): Response
     {
         
         $price = $request->request->get("price");
@@ -43,7 +45,7 @@ class PaiementController extends AbstractController
                             'description'=>$description,
                         ],
 
-                        'unit_amount'=>intval($price*100),
+                        'unit_amount'=>intval($price),
                     ],
                     'quantity'=>$quantity
                 ]],
@@ -61,7 +63,7 @@ class PaiementController extends AbstractController
      /**
      * @Route("/success", name="app_success")
     */
-    public function success(Request $request): Response
+    public function success(Request $request, MailerInterface $mailer, TranslatorInterface $translator): Response
     {
         $id_session = $request->query->get('id_sessions');
 
@@ -70,21 +72,36 @@ class PaiementController extends AbstractController
             $id_session,
             []
         );
+        // dd($customer);     
 
         //Récuperation des données du client
         $name = $customer["customer_details"]["name"];
-        $email = $customer["customer_details"]["email"];
-        $payment_status = $customer["payment_status"];
-        $amount = $customer["amount_total"];
+        $adrressemail = $customer["customer_details"]["email"];
+        $payment_method = $customer["payment_method_types"][0];
+        $amount = $customer["amount_total"];      
 
-        // dd($payment_status);
+        $email = (new TemplatedEmail())
+            ->from($this->getParameter('app.mail_from_address'))              
+            ->to($adrressemail)
+            ->subject('Paiement réussi')
+            ->htmlTemplate('paiement/success.html.twig')
+            ->context([
+                'buy_date' => new DateTime(''),
+                'name'=> $name,
+                'amount'=> $amount,
+                'paiment_type'=> $payment_method
+            ]);
 
-        return $this->render('paiement/success.html.twig',[
-            'payment_status'=> $payment_status,
-            'name'=> $name
-        ]);
+            $mailer->send($email);
 
+            $message = $translator->trans('Congratulations on your order, a confirmation email has been sent to you');
+            $this->addFlash('success', $message);
+            
+        return $this->redirectToRoute('app_home');
+             
     }
+
+
 
     /**
      * @Route("/cancel", name="app_cancel")

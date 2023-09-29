@@ -11,8 +11,8 @@
         <div class=" ">
             <h4>{% trans %}Coach:{% endtrans %} {{coach.name}}</h4>  
             <h4>{% trans %}Description:{% endtrans %} {{coach.description}}</h4> 
-            <h4>{% trans %}Social network:{% endtrans %} {{coach.getSocialNetworkingLink}}</4> 
-             <h4>{% trans %}training{% endtrans %}: </h4>                
+            <h4>{% trans %}Social network:{% endtrans %} {{coach.getSocialNetworkingLink}}</h4> 
+            <h4>{% trans %}training{% endtrans %}: </h4>                
             {% for training in coach.trainings %}           
                 <p>=> <a class="text-decoration-none" href={{path('show_training', {id:training.id})}}>{{training.name}}</a></p>
             {% endfor %}             

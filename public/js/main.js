@@ -1,7 +1,6 @@
 $(function () {
   //Tout a été chargé!
   console.log("Dom chargé! ");
-  console.log("test ajax");
 
   //Header
   $(".navbar-toggler").css("background-color", "white");
@@ -22,10 +21,10 @@ $(function () {
     },
     messages: {
       email: {
-        required: "Enter a valid email address",
+        required: "Entrez une adresse électronique valide",
       },
       password: {
-        required: "Enter your password",
+        required: "Entrez votre mot de passe",
       },
     },
     submitHandler: function (form) {

@@ -59,7 +59,7 @@
       </trans-unit>
       <trans-unit id="OnhpU4i" resname="Home">
         <source>Home</source>
-        <target>Acceuil</target>
+        <target>Accueil</target>
       </trans-unit>
       <trans-unit id="u9AyI1c" resname="Coachs">
         <source>Coachs</source>
@@ -371,7 +371,7 @@
       </trans-unit>
       <trans-unit id="a7v2JDw" resname="Successful payment">
         <source>Successful payment</source>
-        <target>Paiement réussi</target>
+        <target>Confirmation de votre commande</target>
       </trans-unit>
       <trans-unit id="e8FwmrZ" resname="Dear Sir or Madam">
         <source>Dear Sir or Madam</source>
@@ -379,7 +379,7 @@
       </trans-unit>
       <trans-unit id="v2yIpLy" resname="We thank you for your purchase and hope you enjoy your reading.">
         <source>We thank you for your purchase and hope you enjoy your reading.</source>
-        <target>Nous vous remercions pour votre achat et vous souhaitons une bonne lecture</target>
+        <target>Nous vous remercions pour votre commande et vous souhaitons une bonne lecture</target>
       </trans-unit>
       <trans-unit id="mQ2PQmK" resname="You can watch the various training videos here">
         <source>You can watch the various training videos here</source>
@@ -428,6 +428,58 @@
       <trans-unit id="FC1pgYJ" resname="Add a training">
         <source>Add a training</source>
         <target>Ajouter une formation</target>
+      </trans-unit>
+      <trans-unit id="x7rWGj2" resname="Congratulations on your purchase, a confirmation email has been sent to you">
+        <source>Congratulations on your purchase, a confirmation email has been sent to you</source>
+        <target>Félicitations pour votre achat, un e-mail de confirmation vous a été envoyé.</target>
+      </trans-unit>
+      <trans-unit id="uFpOleM" resname="Thank you for your purchase of">
+        <source>Thank you for your purchase of</source>
+        <target>Merci pour votre commande d'un montant de </target>
+      </trans-unit>
+      <trans-unit id="Vp648k5" resname="The date of payment is">
+        <source>The date of payment is</source>
+        <target>La date de paiement est</target>
+      </trans-unit>
+      <trans-unit id="CKY46Dh" resname="Passer à l'action!">
+        <source>Passer à l'action!</source>
+        <target>Passer à l'action!</target>
+      </trans-unit>
+      <trans-unit id="gQ7QnVg" resname="Thank you for your order!">
+        <source>Thank you for your order!</source>
+        <target>Merci pour votre commande!</target>
+      </trans-unit>
+      <trans-unit id="VjuclI9" resname="Total amount:">
+        <source>Total amount:</source>
+        <target>Montant total:</target>
+      </trans-unit>
+      <trans-unit id="mi.UlNC" resname="Type of payment:">
+        <source>Type of payment:</source>
+        <target>Moyen de paiement:</target>
+      </trans-unit>
+      <trans-unit id="YTpmKAz" resname="The date of payment:">
+        <source>The date of payment:</source>
+        <target>Date du paiement:</target>
+      </trans-unit>
+      <trans-unit id="E5LM6p3" resname="Congratulations on your order, a confirmation email has been sent to you">
+        <source>Congratulations on your order, a confirmation email has been sent to you</source>
+        <target>Félicitations pour votre commande, un e-mail de confirmation vous a été envoyé.</target>
+      </trans-unit>
+      <trans-unit id="_E04kkY" resname="Thank you for your order !">
+        <source>Thank you for your order !</source>
+        <target>Merci pour votre commande !</target>
+      </trans-unit>
+      <trans-unit id="uXAKBtc" resname="Total amount :">
+        <source>Total amount :</source>
+        <target>Montant total :</target>
+      </trans-unit>
+      <trans-unit id="7NnOluD" resname="Type of payment :">
+        <source>Type of payment :</source>
+        <target>Moyen de paiement :</target>
+      </trans-unit>
+      <trans-unit id="GrstXdL" resname="The date of payment :">
+        <source>The date of payment :</source>
+        <target>Date du paiement :</target> 
       </trans-unit>
     </body>
   </file>
