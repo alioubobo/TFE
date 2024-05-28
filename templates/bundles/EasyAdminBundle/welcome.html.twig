@@ -1,0 +1,23 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content_title 'Administration' %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="col-6 alert-info">
+                <div>                    
+                    <h1>{% trans %}Nombre d'inscrit{% endtrans %}</h1> 
+                    <span class="display-3">{{countAllUsers['value']}}</span>       
+                </div>
+            </div>
+            <div class="col-6 alert-success">
+                <div>
+                    <h1>{% trans %}Nombre de formation{% endtrans %}</h1>  
+                    <span class="display-3">{{countAllTrainings['value']}}</span>     
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -106,13 +106,13 @@ class TrainingsController extends AbstractController
     //Recuperation of the highlighted training
     public function forwardTraining(TrainingsRepository $trainingsRepository): Response
     {
-        $this->trainingsRepository = $trainingsRepository;
+        //$this->trainingsRepository = $trainingsRepository;
 
-        $forward_training = $this->trainingsRepository->isForward();
+        $forward_training = $trainingsRepository->isForward();
 
         // If no course has been highlighted, select the first validated course
         if(!$forward_training){
-            $forward_training = $this->trainingsRepository->findOneBy(['validated' => 1]);
+            $forward_training = $trainingsRepository->findOneBy(['validated' => 1]);
         }
 
         // If no course has been highlighted, select the first validated course

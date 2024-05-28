@@ -1,11 +1,15 @@
 <div class="container">
+{%  if forwardtraining %}
     <div class="col">
         <h2 class="text-center">{% trans %}The most important training is {% endtrans %} {{forwardtraining.name}}</h2>
         {% for image in forwardtraining.images %}
             <div>                
                 <img class="card-img-bottom" src="{{ asset('/uploads/trainings/'~image.image)}}" alt="{{forwardtraining.name}}"  > 
             </div>
-        {% endfor %}
-        
+        {% endfor %}        
     </div>
+{%  else  %}
+<div> <h2>Pas de formation disponible</h2> </div>
+{% endif %}
 </div>
+

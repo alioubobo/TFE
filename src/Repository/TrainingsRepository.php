@@ -38,6 +38,17 @@ class TrainingsRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    
+    /**
+     * @return 
+     */
+    public function countAllTrainings()
+    {
+        $queryBuilder = $this->createQueryBuilder('t');
+        $queryBuilder->select('COUNT(t.id) as value');
+
+        return $queryBuilder->getQuery()->getOneOrNullResult();
+    }
 
     /**
     * @return Coaches[] Returns an array of Coaches objects
