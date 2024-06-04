@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Coaches;
 use App\Entity\Customers;
 use App\Entity\Trainings;
+use App\Entity\Users;
 use App\Repository\TrainingsRepository;
 use App\Repository\UsersRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -50,5 +51,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Coaches', 'fas fa-list', Coaches::class);
         yield MenuItem::linkToCrud('Trainings', 'fas fa-list', Trainings::class);
         yield MenuItem::linkToCrud('Customers', 'fas fa-list', Customers::class);
+        yield MenuItem::linkToCrud('Users', 'fas fa-list', Users::class);
     }
 }

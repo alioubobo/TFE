@@ -49,8 +49,8 @@ class TrainingsController extends AbstractController
                  $img->setImage($fichier);
                  $trainings->addImage($img);
  
-            }               
-
+            }             
+            
             $entityManager->persist($trainings);
             $entityManager->flush();
             return $this->redirectToRoute('app_home');
@@ -106,8 +106,6 @@ class TrainingsController extends AbstractController
     //Recuperation of the highlighted training
     public function forwardTraining(TrainingsRepository $trainingsRepository): Response
     {
-        //$this->trainingsRepository = $trainingsRepository;
-
         $forward_training = $trainingsRepository->isForward();
 
         // If no course has been highlighted, select the first validated course

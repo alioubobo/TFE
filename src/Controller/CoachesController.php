@@ -40,6 +40,8 @@ class CoachesController extends AbstractController
             $img->setImage($fichier);           
             $coach->setImage($img);
 
+            $coach->setUsers($this->getUser());
+
             $entityManager->persist($coach);
             $entityManager->flush();
 

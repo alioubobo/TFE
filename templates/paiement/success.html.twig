@@ -6,10 +6,6 @@
     <h3 class="text-center">{% trans %}Total amount : {% endtrans %} {{amount}}€.</h3>
     <h3 class="text-center">{% trans %}Type of payment : {% endtrans %} {{paiment_type}}.</h3>
     <h3 class="text-center">{% trans %} The date of payment : {% endtrans %} {{ buy_date|date('d-m-Y')}}. </h3>
-    <h3 class="text-center">{% trans %}Below is a selection of the most recent training courses.{% endtrans %}</h3>
-      
-    {{ render(path('last_trainings')) }}   
-
 </div>
 
 

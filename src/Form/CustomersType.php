@@ -17,15 +17,13 @@ class CustomersType extends AbstractType
         $builder
             ->add('name', TextareaType::class)
             ->add('first_name', TextareaType::class)
-            ->add('users', TextareaType::class)
+           
             ->add('images', FileType::class,[
                 'label' => 'Image',
                 'multiple' => false,
                 'mapped' => false,
                 'required' => true
-            ])
-            // ->add('favorites')
-            //->add('users')
+            ])           
             ->add('save', SubmitType::class, [
                 'label' => 'Add',
                 'attr' => ['class' => 'submit'],

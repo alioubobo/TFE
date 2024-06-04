@@ -15,13 +15,7 @@ class EditProfileType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email', EmailType::class)
-            ->add('images', FileType::class,[
-                'label' => 'Image',
-                'multiple' => false,
-                'mapped' => false,
-                'required' => true
-            ])
+            ->add('email', EmailType::class)            
             ->add('save', SubmitType::class, [
                 'label' => 'Edit',
                 'attr' => ['class' => 'submit'],

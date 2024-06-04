@@ -67,7 +67,7 @@ class UsersController extends AbstractController
      */
     public function editPassword(EntityManagerInterface $entityManager, Request $request, UserPasswordEncoderInterface $passwordEncoder, TranslatorInterface $translator): Response
     {
-        $session = $request->getSession();       
+        $user = $this->getUser();     
 
         if($request->isMethod('Post')){
 
@@ -84,8 +84,13 @@ class UsersController extends AbstractController
                 $message = $translator->trans('the passwors are diffirent.');
                 $this->addFlash('error', $message);
             }
-        }        
+        }       
 
-        return $this->render('users/editpassword.html.twig');
+        
+        if(in_array('COACH', $user->getRoles())){
+            return $this->render('users/editcoachpassword.html.twig');
+       }else {
+           return $this->render('users/editcustomerpassword.html.twig');
+       }
     }
 }

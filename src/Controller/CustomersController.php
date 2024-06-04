@@ -39,6 +39,8 @@ class CustomersController extends AbstractController
             $img->setImage($fichier);           
             $customer->setImage($img);
 
+            $customer->setUsers($this->getUser());
+
             $entityManager->persist($customer);
             $entityManager->flush();
             
