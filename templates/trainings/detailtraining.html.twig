@@ -7,24 +7,24 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 ">
         <div>
             {% for image in training.images %}
-            <div>
-                <img class="card-img-bottom" src="{{ asset('/uploads/trainings/'~image.image)|imagine_filter('carre')}}" alt="{{training.name}}" >
-            </div>
-            {% endfor %}  
+                <div>
+                    <img class="card-img-bottom" src="{{ asset('/uploads/trainings/'~image.image)|imagine_filter('carre')}}" alt="{{training.name}}" >
+                </div>
+            {% endfor %}             
         </div>
         <div>
             <p>{% trans %}Name: {% endtrans %}{{training.name}}</p>
             <p>{% trans %}Description:{% endtrans %} {{training.description}}</p>  
-            <p>{% trans %}Price: {% endtrans %}{{training.price}}</p> 
+            <p>{% trans %}Price: {% endtrans %}{{training.price}}€</p> 
             {% for coach in training.coache %}
                 <p>{% trans %}Coach: {% endtrans %}{{coach.name}}</p>
             {% endfor %}
+            
             <div class="">
                 <button id="invit-paiement" class="btn btn-primary "  type="submit">{% trans %}Passer à l'action!{% endtrans %}</button>
                 <div id="invitpaiement"></div>
             </div>
-
-            {% if app.user %}
+            {% if app.user %}               
                 <div >                    
                     <form class="d-flex" action={{path('app_checkout')}} method="Post">        
                             <div class="form-group ">                            
@@ -36,7 +36,17 @@
                             </div>
                     </form> 
                 </div>                    
-            {% endif %}
+            {% endif %}   
+            {% if is_granted('ROLE_CUSTOMER') %}  
+                {% for pdf in training.pDFs %}                   
+                    <div>        
+                        <object type="application/pdf" width="100%" height="100%">
+                            <param name="src" value="{{ asset('uploads/pdfs/'~pdf.pdf) }}" />                        
+                            <p><a class="text-decoration-none" href="{{ asset('uploads/pdfs/'~pdf.pdf) }}">Click here to download the training files.</a></p>                    
+                        </object>
+                    </div>       
+                {% endfor %}
+            {% endif %}       
         </div>
     </div>  
 </div>

@@ -50,7 +50,7 @@
                     {% for training in app.user.coach.trainings %}
                     <div class="row">                        
                         <div class="col-md-9 ">
-                            <a class="text-decoration-none "  href={{path('show_training', {id:training.id})}}>{{training.name}}</a>
+                            <a class="text-decoration-none"  href={{path('show_training', {id:training.id})}}>{{training.name}}</a>
                         </div>
                     </div>
                     {% endfor %}

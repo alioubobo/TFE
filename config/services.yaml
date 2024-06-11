@@ -9,6 +9,7 @@ parameters:
   app.customers_directory: "%kernel.project_dir%/public/uploads/customers"
   app.images_directory: "%kernel.project_dir%/public/uploads/images"
   app.trainings_directory: "%kernel.project_dir%/public/uploads/trainings"
+  app.trainings_pdf_directory: "%kernel.project_dir%/public/uploads/pdfs"
   # les langues disponbles
   app.locales: [en, fr]
 services:

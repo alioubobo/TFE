@@ -24,7 +24,9 @@ class UsersController extends AbstractController
     {      
         $user = $this->getUser(); 
         //check the user's role to direct them to the correct template
-        if(in_array('COACH', $user->getRoles())){
+        if(in_array('ROLE_COACH', $user->getRoles())){
+            return $this->render('users/coachprofile.html.twig');
+        }else if(in_array('ROLE_ADMIN', $user->getRoles())){
             return $this->render('users/coachprofile.html.twig');
         }else {
             return $this->render('users/customerprofile.html.twig');
@@ -51,10 +53,14 @@ class UsersController extends AbstractController
             return $this->redirectToRoute('app_users');
         }
 
-        if(in_array('COACH', $user->getRoles())){
+        if(in_array('ROLE_COACH', $user->getRoles())){
              return $this->renderForm('users/editcoachprofile.html.twig', [
                 'form' => $form,
             ]);
+        }else if(in_array('ROLE_ADMIN', $user->getRoles())){
+            return $this->renderForm('users/editcoachprofile.html.twig', [
+               'form' => $form,
+           ]);
         }else {
             return $this->renderForm('users/editcustomerprofile.html.twig', [
                 'form' => $form,
@@ -87,10 +93,12 @@ class UsersController extends AbstractController
         }       
 
         
-        if(in_array('COACH', $user->getRoles())){
+        if(in_array('ROLE_COACH', $user->getRoles())){
             return $this->render('users/editcoachpassword.html.twig');
-       }else {
+        }else if(in_array('ROLE_ADMIN', $user->getRoles())){
+            return $this->render('users/editcoachpassword.html.twig');
+        }else {
            return $this->render('users/editcustomerpassword.html.twig');
-       }
+        }
     }
 }

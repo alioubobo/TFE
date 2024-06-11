@@ -11,15 +11,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class CoachesController extends AbstractController
 {
     /**
-     * @Route("/addcoaches", name="add_coaches")         
+     * @Route("/addcoaches", name="add_coaches") 
+     * @IsGranted("ROLE_ADMIN")        
      */     
-    //consists in creating a coach
+    //consists in creating a coach    
     public function addCoaches(EntityManagerInterface $entityManager, Request $request, TranslatorInterface $translator): Response
     {
         $coach = new Coaches();

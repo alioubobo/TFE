@@ -32,6 +32,12 @@ class PDF
      */
     private $promotion;
 
+    public function __toString()
+    {
+        $this->getPdf();
+        return $this->pdf;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

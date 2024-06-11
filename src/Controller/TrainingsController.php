@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Images;
+use App\Entity\PDF;
 use App\Entity\Trainings;
 use App\Form\TrainingsType;
 use App\Repository\TrainingsRepository;
@@ -13,13 +14,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Stripe\StripeClient;
 
 class TrainingsController extends AbstractController
 {
     /**
-     * @Route("/addtrainings", name="add_trainings")           
+     * @Route("/addtrainings", name="add_trainings")        
+     * @IsGranted("ROLE_COACH")    
     */
     
     public function addtrainigs(EntityManagerInterface $entityManager, Request $request): Response
@@ -33,6 +35,7 @@ class TrainingsController extends AbstractController
             $trainings = $form->getData();  
              //recover the images sent by the form
              $imgs = $form->get('images')->getData();
+             $pdfs = $form->get('pDFs')->getData();
             
              //on boucle sur les images
             foreach($imgs as $images){
@@ -49,7 +52,22 @@ class TrainingsController extends AbstractController
                  $img->setImage($fichier);
                  $trainings->addImage($img);
  
-            }             
+            }
+            foreach($pdfs as $pdf){
+                //generates a new file name
+                $fichier = md5(uniqid()) . '.' .$pdf->guessExtension();
+
+                //copies the file to the uploads folder
+                $pdf->move(
+                    $this->getParameter('app.trainings_pdf_directory'),
+                    $fichier
+                );
+                
+                $pdff = new PDF();
+                $pdff->setPdf($fichier);
+                $trainings->addPDF($pdff);
+
+            }              
             
             $entityManager->persist($trainings);
             $entityManager->flush();

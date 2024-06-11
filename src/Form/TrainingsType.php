@@ -27,6 +27,12 @@ class TrainingsType extends AbstractType
                 'mapped' => false,
                 'required' => true
             ])
+            ->add('pDFs', FileType::class,[
+                'label' => 'PDF',
+                'multiple' => true,
+                'mapped' => false,
+                'required' => true
+            ])
             // ->add('video')
             ->add('coache')
             ->add('forward')

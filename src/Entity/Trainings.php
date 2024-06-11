@@ -61,7 +61,7 @@ class Trainings
     private $images;
 
     /**
-     * @ORM\OneToMany(targetEntity=PDF::class, mappedBy="training")
+     * @ORM\OneToMany(targetEntity=PDF::class, mappedBy="training", cascade={"persist", "remove"})
      */
     private $pDFs;
 
