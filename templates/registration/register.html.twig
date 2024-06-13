@@ -14,13 +14,13 @@
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.password, {
-            label: 'Password'
+            
         }) }}
          {{ form_row(registrationForm.confirmPassword, {
-            label: 'confirm your password'
+            
         }) }}
         {{ form_row(registrationForm.agreeTerms, {
-            label: 'You should agree to our terms.'
+            
         }) }}
 
         <button type="submit" class="btn btn-lg btn-primary mt-3 mb-3">{% trans %}Register{% endtrans %}</button>

@@ -28,6 +28,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
+                'label' => 'You should agree to our terms.',
                 'constraints' => [
                     new IsTrue([
                         'message' => 'You must accept our conditions.',
@@ -51,6 +52,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('confirmPassword', PasswordType::class, [                
                 'mapped' => false,
+                'label' => 'confirm password',
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([

@@ -6,13 +6,13 @@
 <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 ">    
         <div class=" ">            
-            <img class="card-img-bottom" src="{{ asset('/uploads/coaches/'~coach.image)|imagine_filter('carre') }}" alt="{{coach.name}}" >
+            <img class="card-img-bottom my-5" src="{{ asset('/uploads/coaches/'~coach.image)|imagine_filter('carre') }}" alt="{{coach.name}}" >
         </div>   
-        <div class=" ">
-            <h4>{% trans %}Coach:{% endtrans %} {{coach.name}}</h4>  
-            <h4>{% trans %}Description:{% endtrans %} {{coach.description}}</h4> 
-            <h4>{% trans %}Social network:{% endtrans %} {{coach.getSocialNetworkingLink}}</h4> 
-            <h4>{% trans %}training{% endtrans %}: </h4>                
+        <div class="mt-5">
+            <h4 class="display-5"><span class="h1">{% trans %}Coach:{% endtrans %}</span> {{coach.name}}</h4>  
+            <h4 class="display-5"><span class="h1">{% trans %}Description:{% endtrans %}</span> {{coach.description}}</h4> 
+            <h4 class="display-5"><span class="h1">{% trans %}Social network:{% endtrans %}</span> {{coach.getSocialNetworkingLink}}</h4> 
+            <h4 class="display-5"><span class="h1">{% trans %}training:{% endtrans %}</span> </h4>                
             {% for training in coach.trainings %}           
                 <p>=> <a class="text-decoration-none" href={{path('show_training', {id:training.id})}}>{{training.name}}</a></p>
             {% endfor %}             

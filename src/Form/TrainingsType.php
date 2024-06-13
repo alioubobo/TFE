@@ -19,8 +19,7 @@ class TrainingsType extends AbstractType
         $builder
             ->add('name', TextareaType::class)
             ->add('description', TextareaType::class)            
-            ->add('price', IntegerType::class)
-            ->add('creation_date', DateType::class)
+            ->add('price', IntegerType::class)           
             ->add('images', FileType::class,[
                 'label' => 'Image',
                 'multiple' => true,
@@ -32,8 +31,7 @@ class TrainingsType extends AbstractType
                 'multiple' => true,
                 'mapped' => false,
                 'required' => true
-            ])
-            // ->add('video')
+            ])            
             ->add('coache')
             ->add('forward')
             // ->add('trainingsLang')

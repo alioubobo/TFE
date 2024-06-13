@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Coaches;
 use App\Entity\Images;
 use App\Entity\PDF;
+use DateTime;
 use App\Entity\Trainings;
 use App\Form\TrainingsType;
 use App\Repository\TrainingsRepository;
@@ -27,6 +29,7 @@ class TrainingsController extends AbstractController
     public function addtrainigs(EntityManagerInterface $entityManager, Request $request): Response
     {
         $trainings = new Trainings();
+        $trainings->setCreationDate(new DateTime(""));
        
         $form = $this->createForm(TrainingsType::class, $trainings);
         $form->handleRequest($request);
@@ -67,7 +70,13 @@ class TrainingsController extends AbstractController
                 $pdff->setPdf($fichier);
                 $trainings->addPDF($pdff);
 
-            }              
+            }       
+            //$coach = new Coaches();
+           // $coach->setUsers($this->getUser());
+            //$trainings->setCoache($coach);
+            
+            //$coach = $this->getUser();
+            //$trainings->setCoache($coach);
             
             $entityManager->persist($trainings);
             $entityManager->flush();

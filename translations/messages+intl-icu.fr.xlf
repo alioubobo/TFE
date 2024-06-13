@@ -479,7 +479,39 @@
       </trans-unit>
       <trans-unit id="GrstXdL" resname="The date of payment :">
         <source>The date of payment :</source>
-        <target>Date du paiement :</target> 
+        <target>Date du paiement :</target>
+      </trans-unit>
+      <trans-unit id="MUsnq5L" resname="Nombre d'inscrit">
+        <source>Nombre d'inscrit</source>
+        <target>Nombre d'inscrit</target>
+      </trans-unit>
+      <trans-unit id="1v14AH1" resname="Nombre de formation">
+        <source>Nombre de formation</source>
+        <target>Nombre de formation</target>
+      </trans-unit>
+      <trans-unit id="CYrfN7i" resname="Click here to download the training files.">
+        <source>Click here to download the training files.</source>
+        <target>Cliquez ici pour télécharger les fichiers de formation.</target>
+      </trans-unit>
+      <trans-unit id="84Z9dU7" resname="Number of subscribers">
+        <source>Number of subscribers</source>
+        <target>Nombre d'inscrit</target>
+      </trans-unit>
+      <trans-unit id="BO5Laqc" resname="Number of courses">
+        <source>Number of courses</source>
+        <target>Nombre de formation</target>
+      </trans-unit>
+      <trans-unit id="LA7lA8m" resname="training:">
+        <source>training:</source>
+        <target>Formation:</target>
+      </trans-unit>
+      <trans-unit id="glguEgZ" resname="Profile of">
+        <source>Profile of</source>
+        <target>Profil de</target>
+      </trans-unit>
+      <trans-unit id="IaE5GBl" resname="You should agree to our terms.">
+        <source>You should agree to our terms.</source>
+        <target>Vous devez accepter nos conditions.</target>
       </trans-unit>
     </body>
   </file>

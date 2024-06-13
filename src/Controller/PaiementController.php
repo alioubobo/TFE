@@ -45,7 +45,7 @@ class PaiementController extends AbstractController
                             'description'=>$description,
                         ],
 
-                        'unit_amount'=>intval($price),
+                        'unit_amount'=>intval($price)*100,
                     ],
                     'quantity'=>$quantity
                 ]],
@@ -88,7 +88,7 @@ class PaiementController extends AbstractController
             ->context([
                 'buy_date' => new DateTime(''),
                 'name'=> $name,
-                'amount'=> $amount,
+                'amount'=> $amount/100,
                 'paiment_type'=> $payment_method
             ]);
 
