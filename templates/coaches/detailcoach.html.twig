@@ -3,7 +3,7 @@
 {% block title %}{% trans %}Detail coach{% endtrans %}{% endblock %}
 
 {% block body %}
-<div class="container">
+<div class="container layout">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 ">    
         <div class=" ">            
             <img class="card-img-bottom my-5" src="{{ asset('/uploads/coaches/'~coach.image)|imagine_filter('carre') }}" alt="{{coach.name}}" >

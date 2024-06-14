@@ -3,7 +3,7 @@
 {% block title %}{% trans %}profile of{% endtrans %} {{app.user.customer.name}} {% endblock %}
 
 {% block body %}
-<div class="container">
+<div class="container layout">
     <div class="row">      
         <div class="col-md-4 my-5">
             <div class="card bg-dark text-center sidebar">
@@ -38,24 +38,9 @@
                     <div class="btn-group">                        
                         <button type="button" class="btn btn-primary btn-sm btn-outline-secondary"><a class="text-decoration-none text-white" href={{path('users_edit_password')}}>{% trans %}Edit my password{% endtrans %}</a></button>
                         <button type="button" class="btn btn-primary btn-sm btn-outline-secondary ms-3"><a class="text-decoration-none text-white"href={{path('users_edit_profile')}}>{% trans %}Edit my profile{% endtrans %}</a></button>
-                    </div>
-                    <hr>
-                </div>
-            </div>
-            {% if is_granted('ROLE_CUSTOMER') %}                
-                <div class="card mb-3 content">
-                    {#<h1>The training courses of {{app.user.customer.name}}</h1>#}
-                    <div class="card-body">                    
-                        <div class="row">                        
-                            <div class="col-md-9 ">
-                               {# <a class="tet-decoration-none " >Info</a>#}
-                            </div>
-                        </div>                        
                     </div>                    
-                </div> 
-            {% else %}
-                <h1>Je ne suis pas encore client</h1>
-            {% endif %}                       
+                </div>
+            </div>                                 
         </div> 
     </div>    
 </div>

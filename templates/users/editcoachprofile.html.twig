@@ -3,9 +3,9 @@
 {% block title %}{% trans %}Edit Profile{% endtrans %}{% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="container layout">
         <div class="row">
-            <div class="col-md-4 mt-1">
+            <div class="col-md-4 my-5">
                 <div class="card bg-dark text-center sidebar">
                     <div class="card-body">
                         <img src="{{ asset('/uploads/coaches/'~app.user.coach.image)}}" class="rounded-circle" alt="{{app.user.coach.name}}" width="200">
@@ -15,7 +15,7 @@
                     </div>
                 </div> 
             </div> 
-            <div class="col-md-8 mt-1">
+            <div class="col-md-8 my-5">
                 <div class="card mb-3 content">
                     <h1>{% trans %}Edit profile {% endtrans %}{{app.user.coach.name}} </h1>
                     <div class="card-body">

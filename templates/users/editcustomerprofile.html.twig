@@ -3,9 +3,9 @@
 {% block title %}Edit Profile{% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="container layout">
         <div class="row">
-            <div class="col-md-4 mt-1">
+            <div class="col-md-4 my-5">
                 <div class="card bg-dark text-center sidebar">
                     <div class="card-body">
                         <img src="{{ asset('/uploads/customers/'~app.user.customer.image)}}" class="rounded-circle" alt="{{app.user.customer.name}}" width="200">
@@ -15,7 +15,7 @@
                     </div>
                 </div> 
             </div> 
-            <div class="col-md-8 mt-1">
+            <div class="col-md-8 my-5">
                 <div class="card mb-3 content">
                     <h1>Edit profile{{app.user.customer.name}} </h1>
                     <div class="card-body">

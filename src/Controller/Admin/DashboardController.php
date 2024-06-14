@@ -31,8 +31,7 @@ class DashboardController extends AbstractDashboardController
      * @Route("/admin", name="admin")
      */
     public function index(): Response
-    {
-        //return $this->render('admin/dashboard.html.twig');
+    {      
         return $this->render('bundles/EasyAdminBundle/welcome.html.twig', [
             'countAllUsers' => $this->usersRepository->countAllUsers(),
             'countAllTrainings' => $this->trainingsRepository->countAllTrainings()

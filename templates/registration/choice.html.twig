@@ -3,12 +3,12 @@
 {% block title %}{% trans %}Choice register{% endtrans %}{% endblock %}
 
 {% block body %}
-<div class="container">  
+<div class="container layout">  
     <h2 class="mt-5">{% trans %}Complete your information according to your status{% endtrans %}</h2>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <button class="btn btn-primary my-5 " type="button"><a class="nav-link text-white" href={{path('add_coaches')}}>{% trans %}Coach{% endtrans %}</a></button>
-        <br>
-        <button class="btn btn-primary my-5 " type="button"><a class="nav-link text-white" href={{path('add_customers')}}>{% trans %}Customer{% endtrans %}</a></button>
+        
+        <button class="btn btn-primary my-5 mx-5" type="button"><a class="nav-link text-white" href={{path('add_customers')}}>{% trans %}Customer{% endtrans %}</a></button>
     </div>
 </div>
 {% endblock %}

@@ -513,6 +513,50 @@
         <source>You should agree to our terms.</source>
         <target>Vous devez accepter nos conditions.</target>
       </trans-unit>
+      <trans-unit id="8cZeFIF" resname="Forward">
+        <source>Forward</source>
+        <target>En Avant</target>
+      </trans-unit>
+      <trans-unit id="n9coxmy" resname="Add">
+        <source>Add</source>
+        <target>Ajouter</target>
+      </trans-unit>
+      <trans-unit id="VD_c90x" resname="Corfirm">
+        <source>Corfirm</source>
+        <target>Confirmer</target>
+      </trans-unit>
+      <trans-unit id="s3XmzXw" resname="Coache">
+        <source>Coache</source>
+        <target>Coach</target>
+      </trans-unit>
+      <trans-unit id="k8kchR5" resname="Price">
+        <source>Price</source>
+        <target>Prix</target>
+      </trans-unit>
+      <trans-unit id="cC75Ie0" resname="First name">
+        <source>First name</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="u6BkEhE" resname="ARS 2024 all rights reserved">
+        <source>ARS 2024 all rights reserved</source>
+        <target>ARS 2024 tous droits réservés</target>
+      </trans-unit>
+      <trans-unit id="ylHOH7F" resname="Hi!">
+        <source>Hi!</source>
+        <target>Bonjour!</target>
+      </trans-unit>
+      <trans-unit id="RkxP.QG" resname="Edit">
+        <source>Edit</source>
+        <target>Editer</target>
+      </trans-unit>
+      <trans-unit id="7r3SSnf" resname="Confirm">
+        <source>Confirm</source>
+        <target>Confirmer</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

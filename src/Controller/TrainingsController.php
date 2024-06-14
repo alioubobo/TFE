@@ -70,13 +70,7 @@ class TrainingsController extends AbstractController
                 $pdff->setPdf($fichier);
                 $trainings->addPDF($pdff);
 
-            }       
-            //$coach = new Coaches();
-           // $coach->setUsers($this->getUser());
-            //$trainings->setCoache($coach);
-            
-            //$coach = $this->getUser();
-            //$trainings->setCoache($coach);
+            }      
             
             $entityManager->persist($trainings);
             $entityManager->flush();

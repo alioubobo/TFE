@@ -3,8 +3,8 @@
 {% block title %}{% trans %}Password Reset Email Sent{% endtrans %}{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <p>
+    <div class="container layout">
+        <p class="my-5">
            {% trans %} If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password.{% endtrans %}
             This link will expire in {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
         </p>

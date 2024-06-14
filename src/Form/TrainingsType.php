@@ -4,7 +4,7 @@ namespace App\Form;
 
 use App\Entity\Trainings;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -19,7 +19,8 @@ class TrainingsType extends AbstractType
         $builder
             ->add('name', TextareaType::class)
             ->add('description', TextareaType::class)            
-            ->add('price', IntegerType::class)           
+            ->add('price', IntegerType::class)  
+            ->add('coache')         
             ->add('images', FileType::class,[
                 'label' => 'Image',
                 'multiple' => true,
@@ -31,9 +32,10 @@ class TrainingsType extends AbstractType
                 'multiple' => true,
                 'mapped' => false,
                 'required' => true
-            ])            
-            ->add('coache')
-            ->add('forward')
+            ])          
+            ->add('forward', CheckboxType::class,[
+                'label' => 'Forward',                
+            ])
             // ->add('trainingsLang')
             ->add('save', SubmitType::class, [
                 'label' => 'Add',
