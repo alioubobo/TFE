@@ -6,11 +6,12 @@ use App\Repository\TrainingsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=TrainingsRepository::class)
  */
-class Trainings
+class Trainings 
 {
     /**
      * @ORM\Id
@@ -20,12 +21,14 @@ class Trainings
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @Gedmo\Translatable 
+     * @ORM\Column(type="string", length=255)  
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @Gedmo\Translatable
+     * @ORM\Column(type="string", length=255)    
      */
     private $description;
 

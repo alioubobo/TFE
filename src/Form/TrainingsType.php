@@ -34,7 +34,8 @@ class TrainingsType extends AbstractType
                 'required' => true
             ])          
             ->add('forward', CheckboxType::class,[
-                'label' => 'Forward',                
+                'label' => 'Forward',   
+                'required' => false             
             ])
             // ->add('trainingsLang')
             ->add('save', SubmitType::class, [

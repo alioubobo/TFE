@@ -21,7 +21,7 @@ class TrainingsCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('name'),
-            TextEditorField::new('description'),           
+            TextField::new('description'),           
         ];
     }
     

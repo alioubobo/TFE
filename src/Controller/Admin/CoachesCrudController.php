@@ -21,7 +21,7 @@ class CoachesCrudController extends AbstractCrudController
             IdField::new('id')->onlyOnIndex(),
             TextField::new('name'),
             TextField::new('first_name'),
-            TextEditorField::new('description'),
+            TextField::new('description'),
         ];
     }
     
